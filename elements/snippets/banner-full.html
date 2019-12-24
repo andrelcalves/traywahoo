@@ -1,0 +1,25 @@
+{% if banners.home.slides %}
+    {% if pages.current == 'home' and banner.home %}
+        {% if settings.fullbanner_tipo == "cemporcento" %}
+        <section class="banners">
+        {% elseif settings.fullbanner_tipo == "centralizado" %}
+        <section class="banners container-custom">
+        {% endif %}
+            {% if not utils.is_mobile %}
+            <div class="banner-arrows advert">
+            {% else %}
+            <div class="banner-arrows advert-mobile">
+            {% endif %}
+            {% for slide in banners.home.slides %}
+                <a href="{{ slide.link }}" target="{{ slide.target }}">
+                    <img src="{{ slide.image }}" alt="{{ slide.label }}">
+                </a>
+            {% endfor %}
+            </div>
+        </section>
+    {% endif %}
+{% else %}
+    <section class="banners">
+      {{ banner.home }}
+    </section>
+{% endif %}

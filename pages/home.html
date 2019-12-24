@@ -1,0 +1,260 @@
+{% set limitProducts = settings.quantproduct %}
+{% set showAvailable = settings.show_available_products ? 'available' %}
+
+<!--FULLBANNER-->
+{% if not utils.is_mobile %}
+    {% element 'snippets/banner-full' %}
+{% else %}
+    {% if settings.enable_banner_full %}
+        {% element 'snippets/banner-full' %}
+    {% endif %}
+{% endif %}
+
+{% if not utils.is_mobile %}
+<!--BANNER RÉGUA-->
+<div class="container-custom">
+    <div class="row">
+        <div class="banner-regua">
+            {{ banner.extra1 }}
+        </div>
+    </div>
+</div>
+{% endif %}
+
+<!--MINI BANNERS-->
+{% if not utils.is_mobile %}
+    {% element 'snippets/banner-mini1' %}
+{% else %}
+    {% if settings.enable_banner_minis %}
+        {% element 'snippets/banner-mini1' %}
+    {% endif %}
+{% endif %}
+
+{% if settings.vitrine_destaques %}
+    <!-- DESTAQUES -->
+    {% if showAvailable %}
+        {% set destaques = Products({
+            'filter': ['featured', showAvailable],
+            'limit': limitProducts,
+            'order': rand
+        }) %}
+    {% else %}
+        {% set destaques = Products({
+            'filter': 'featured',
+            'limit': limitProducts,
+            'order': rand
+        }) %}
+    {% endif %}
+    
+    {% if destaques|length > 0 %}
+    <div class="container-custom banner-mini display-slider display-offer">
+        <!--TITLE 7-->
+        <div class="row title7">
+            <div class="col-sm-12 title-display">
+                <h2 class="color-base-border-bottom color-base label-display">Produtos em <span class="color-detail">Destaque</span></h2>
+            </div>
+        </div>
+        <!--DISPLAY-->
+        {% if settings.vitrine_destaques_tipo == "listagem" %}
+            {% if not utils.is_mobile %}
+                {% element 'snippets/display' {
+                    "showcaseTitle": "Produtos em Destaque",
+                    "products": destaques
+                } %}
+            {% else %}
+                {% element 'snippets/display-2col' {
+                    "showcaseTitle": "Produtos em Destaque",
+                    "products": destaques
+                } %}
+            {% endif %}
+        {% elseif settings.vitrine_destaques_tipo == "carrossel" %}
+            {% element 'snippets/display-slider' {
+                "showcaseTitle": "Produtos em Destaque",
+                "products": destaques
+            } %}
+        {% endif %}
+        
+    </div><!--/ display -->
+    {% endif %}
+{% endif %}
+
+<!--MINI BANNERS-->
+{% if not utils.is_mobile %}
+    {% element 'snippets/banner-mini2' %}
+{% else %}
+    {% if settings.enable_banner_minis %}
+        {% element 'snippets/banner-mini2' %}
+    {% endif %}
+{% endif %}
+
+{% if settings.vitrine_promocao %}
+    <!-- PRODUTOS EM OFERTA -->
+    {% if showAvailable %}
+        {% set promocao = Products({
+            "filter": ['promotion', showAvailable],
+            "limit": limitProducts,
+            "order": "rand"
+        }) %}
+    {% else %}
+        {% set promocao = Products({
+            "filter": "promotion",
+            "limit": limitProducts,
+            "order": "rand"
+        }) %}
+    {% endif %}
+    
+    {% if promocao|length > 0 %}
+    <div class="container-custom banner-mini display-slider display-offer">
+        <!--TITLE 7-->
+        <div class="row title7">
+            <div class="col-sm-12 title-display">
+                <h2 class="color-base-border-bottom color-base label-display">Produtos em <span class="color-detail">Oferta</span></h2>
+            </div>
+        </div>
+        <!--DISPLAY-->
+        {% if settings.vitrine_promocao_tipo == "listagem" %}
+            {% element 'snippets/display' {
+               "showcaseTitle": "Produtos em Ofertas",
+               "products": promocao
+            } %}
+        {% elseif settings.vitrine_promocao_tipo == "carrossel" %}
+            {% element 'snippets/display-slider' {
+               "showcaseTitle": "Produtos em Ofertas",
+               "products": promocao
+            } %}
+        {% endif %}
+        
+        
+    </div><!--/ display -->
+    {% endif %}
+{% endif %}
+
+
+{% if settings.vitrine_novidades %}
+    <!-- LANÇAMENTOS E NOVIDADES -->
+    {% if showAvailable %}
+        {% set novidades = Products({
+            'filter': ['new', showAvailable],
+            'limit': limitProducts,
+            'order': {'quantity_sold': 'desc'}
+        }) %}
+    {% else %}
+        {% set novidades = Products({
+            'filter': 'new',
+            'limit': limitProducts,
+            'order': {'quantity_sold': 'desc'}
+        }) %}
+    {% endif %}
+    
+    {% if novidades|length > 0 %}
+    <div class="slider-carrocel-2">
+        <div class="container-custom display-slider display-offer">
+            <!--TITLE 1-->
+            <div class="row title1">
+                <div class="col-sm-12 title-display">
+                    <h2 class="color-base-border-top color-base label-display">Produtos em <span class="color-detail">Lançamento</span></h2>
+                </div>
+            </div>
+            <!--DISPLAY-->
+            {% if settings.vitrine_novidades_tipo == "listagem" %}
+                {% element 'snippets/display' {
+                    "showcaseTitle": "Produtos em Lançamento",
+                    "products": novidades
+                } %}
+            {% elseif settings.vitrine_novidades_tipo == "carrossel" %}
+                {% element 'snippets/display-slider' {
+                    "showcaseTitle": "Produtos em Lançamento",
+                    "products": novidades
+                } %}
+            {% endif %}
+                
+        </div><!--/ display -->
+    </div>
+    {% endif %}
+{% endif %}
+
+
+{% if settings.vitrine_maisvendidos %}
+    <!-- MAIS VENDIDOS -->
+    {% if showAvailable %}
+        {% set maisvendidos = Products({
+            'filter': [showAvailable],
+            'limit': limitProducts,
+            'order': {'quantity_sold': 'desc'}
+        }) %}
+    {% else %}
+        {% set maisvendidos = Products({
+            'limit': limitProducts,
+            'order': {'quantity_sold': 'desc'}
+        }) %}
+    {% endif %}
+    
+    {% if maisvendidos|length > 0 %}
+    <div class="container-custom display-slider display-offer">
+        <!--TITLE 7-->
+        <div class="row title7">
+            <div class="col-sm-12 title-display">
+                <h2 class="color-base-border-bottom color-base label-display">Mais <span class="color-detail">Vendidos</span></h2>
+            </div>
+        </div>
+        <!--DISPLAY-->
+        {% if settings.vitrine_maisvendidos_tipo == "listagem" %}
+            {% element 'snippets/display' {
+                "showcaseTitle": "Mais Vendidos",
+                "products": maisvendidos
+            } %}
+        {% elseif settings.vitrine_maisvendidos_tipo == "carrossel" %}
+            {% element 'snippets/display-slider' {
+                "showcaseTitle": "Mais Vendidos",
+                "products": maisvendidos
+            } %}
+        {% endif %}
+            
+    </div>
+    {% endif %}
+{% endif %}
+
+<!-- DEPOIMENTO -->
+{% if settings.exibir_depoimentos == "sim" %}
+<div class="testimony">
+    <div class="container-custom">
+        <div class="row title7">
+            <div class="col-sm-12 title-display">
+                <h2 class="color-base-border-bottom color-base label-display">Depoimento dos <span class="color-detail">Clientes</span></h2>
+            </div>
+        </div>
+        {% element 'snippets/depoimentos' %}
+    </div>
+</div>
+{% endif %}
+
+<!-- NOTÍCIAS -->
+{% if settings.exibir_noticias == "sim" %}
+<div class="news-home">
+    <div class="container-custom">
+        <div class="row title7">
+            <div class="col-sm-12 title-display">
+                <h2 class="color-base-border-bottom color-base label-display">Últimas <span class="color-detail">Notícias</span></h2>
+            </div>
+        </div>
+        {% element 'snippets/noticias' %}
+    </div>
+</div>
+{% endif %}
+
+<!--BANNER RODAPÉ-->
+{% if pages.current == 'home' %}
+    {% if banner.footer %}
+    <span class="bg-bannerfooter">
+    <div class="container-custom">
+        <div class="banners banner-footer">
+            {{ banner.footer }}
+        </div>
+    </div>
+    </span>
+    {% endif %}
+{% endif %}
+
+
+<!--NEWSLETTER-->
+{% element 'snippets/newsletter' %}

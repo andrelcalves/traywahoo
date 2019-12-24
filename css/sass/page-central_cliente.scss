@@ -1,0 +1,232 @@
+.custom-nkol-central_gera_troca,
+.custom-nkol-central_listas_cliente,
+.custom-nkol-central_comissoes_extrato,
+.custom-nkol-central_comissoes,
+.custom-nkol-central_listas,
+.custom-nkol-central_cliente,
+.custom-nkol-central_anteriores,
+.custom-nkol-central_confirmar_pagamento,
+.custom-nkol-central_rastrear,
+.custom-nkol-central_troca,
+.custom-nkol-central_detalhe_pedido,
+.custom-nkol-central_senha,
+.custom-nkol-central_lista_espera{
+    
+    // content
+    .page-content{
+        background: #fff;
+        margin-top: 30px;
+        padding: 15px 30px 30px;
+        
+        @media screen and (max-width: 767px){
+            padding: 15px;
+        }
+        
+        .Mapa {
+            height: 28px;
+        }
+        
+        .breadcrumb{
+            display: none;
+        }
+        
+        h1{
+            background-color: $color-bg;
+            color: #fff;
+            font-family: $main, sans-serif;
+            font-size: 1.1rem;
+            font-weight: 400;
+            line-height: 1.1;
+            text-align: center;
+            margin: 0 0 30px;
+            padding: 10px;
+            text-transform: uppercase;
+            
+        }
+    }
+    
+    .central-menu {
+        border: 1px solid #ccc;
+        margin-top: 30px;
+        
+        + .container,
+        > br,
+        > div[style="clear:both"]{
+            display: none;
+        }
+    }
+    
+    .central-saudacao{
+        font-size: 1.4rem;
+        line-height: 2rem;
+        
+        > br:first-child{
+            display: none;
+        }
+    }
+    
+    .central-titulo{
+        display: none;
+    }
+    
+    // sidebar
+    .sidebar-central{
+        margin-top: 30px;
+        
+        > div{
+            background: #fff;
+            margin-left: -15px;
+            margin-right: 15px;
+            padding: 15px;
+            
+            @media screen and (max-width: 767px){
+                margin: 0 -15px;
+            }
+            
+            h2{
+                background-color: $color-bg;
+                color: #fff;
+                font-family: $main, sans-serif;
+                font-size: 1.1rem;
+                font-weight: 400;
+                line-height: 1.1;
+                text-align: center;
+                margin: 0 0 30px;
+                padding: 10px;
+                text-transform: uppercase;
+            }
+            
+            a{
+                font-size: 13px;
+                color: #2C2C2C;
+                display: block;
+                padding: 3px 0;
+                text-decoration: none;
+                
+                &:hover{
+                    text-decoration: underline;
+                }
+            }
+            
+            
+            > ul {
+                > li{
+                    margin-bottom: 15px;
+                    color: #2C2C2C;
+                    @include font(.75em, 300, $main, 2); // size; weight; family, line-heigh
+                    border-bottom: 2px solid $color-bg;
+                    
+                    &:last-child{
+                        padding-bottom: 10px !important;
+                        border-top: 0;
+                        border-bottom: 0;
+                    }
+                }
+                
+                li {
+                    padding: 3px 0 !important;
+                    border-top: 1px solid #EAEAEA;
+                }
+                
+            }
+            
+            h4{
+                color: $color-title;
+                text-transform: uppercase;
+                font-weight: bold;
+                font-size: 15px;
+                line-height: 25px;
+            }
+        }
+    }
+    
+    .central-conteudo + .board {
+        font-size: 1.4rem;
+        line-height: 2rem;
+        
+        @media screen and (max-width: 767px){
+            overflow: scroll;
+        }
+        
+        a{
+            color: #3d4445;
+        }
+    }
+    
+    .board form[name="form1"]{
+        overflow: scroll;
+    }
+    
+    table{
+        margin-top: 30px;
+        
+        th,
+        td{
+            border-bottom: 1px solid #DDD;
+            font-size: 1.4rem;
+            padding: 10px;
+        }
+        
+        th{
+            background: #eee;
+            white-space: nowrap;
+        }
+        
+        a{
+            color: #3d4445;
+        }
+    }
+    
+    #senha_atual,
+    #nova_senha,
+    #nova_senha2{
+        font-size: 1.7rem;
+        margin-top: 5px;
+        padding: 6px;
+        width: 100%;
+    }
+    
+    .Pedidos th {
+        white-space: initial!important;
+    }
+}
+
+.custom-nkol-central_senha{
+    
+    #frm2{
+        @media screen and (max-width: 767px){
+            font-size: 0;
+            
+            label,
+            h3{
+                display: block;
+                font-size: 1.4rem;
+                margin: 15px 0 0;
+            }
+        }
+        
+        input[type="image"]{
+            background: url('../img/send-button.png') left top;
+            height: 0;
+            margin-top: 15px;
+            padding: 20px 65px;
+            width: 0;
+        }
+    }
+}
+
+.custom-nkol-central_rastrear{
+    @media screen and (max-width: 767px){
+        .board{
+            overflow: scroll;
+        }
+    }
+}
+
+// track order
+.custom-nkol-central_rastrear{
+    
+    table{
+        margin-top: 0;
+    }
+}

@@ -1,0 +1,335 @@
+/**
+ * reuse.scss
+ */
+ 
+// : Variables 
+
+/// Typograph
+$main: 'Open Sans', Arial, Helvetica, sans-serif;
+$roboto: 'Roboto', sans-serif;
+$family: 'Open Sans', Arial, Helvetica, sans-serif;
+$primary-font: 'Open Sans', Arial, Helvetica, sans-serif;
+
+/// Color's Paleta
+$font: rgba(115, 115, 115, 1); // cor padrao de fonte do layout user-> general
+$color-base: #8aa701; // detalhes #8aa701
+$color-detail: #314F75; // fundos #2d3841
+$color-complement: #314F75; // titulos #2d3841
+$color-bg: #2d3841; // fundos #2d3841
+$color-title: #2d3841; // titulos #2d3841
+
+$color-black: #454545; // fonte #2d3841
+$color-white: #fff; // fonte #2d3841
+$color-gray: #ccc; // #2d3841
+$color-green: green;
+
+$primary-color: #404040;
+
+// customer use -> | layout/header.scss
+$customer: rgba(61, 25, 5, 1); // recepcao do cliente da loja 
+$linkcustomer: rgba(255, 255, 255, 1);
+
+$genaddbuy: rgba(255, 255, 255, 1); // cor generalizada do addbuy
+$addbuyqtd: rgba(255, 255, 255, 1); // cor da quantidade de itens do addbuy use -> | resources/add-buy.scss
+$addbuyprice: rgba(160, 160, 160, 1); // cor da quantidade de itens do addbuy use -> | resources/add-buy.scss
+
+$btnaut: rgba(233, 129, 29, 1); // botao de autenticacao para login e register use -> | pages/pages.scss
+
+// taxo use->  resources/taxo.scss
+$linktaxo: rgba(138, 138, 138, 1); // cor do link das categorias principais da barra de taxonomia
+$alldep: rgba(126, 55, 9, 1); // wrapper de todas as categorias 
+$alldepitem: rgba(178, 99, 27, 1); // item de alldep
+$linkheir: rgba(122, 29, 68, 1);
+$linkheirhover: rgba(255, 255, 255, 1);
+
+// footer
+$footer: rgba(232, 229, 219, 1); // cor padrao footer -> | layout/footer
+$sizefootfont: .689rem;
+$footitle: #111;
+
+// Mixins Effects
+//:----------- Show | Hidden : ----
+@mixin visible() {
+    opacity: 1;
+    visibility: visible;
+}
+@mixin hidden() {
+    opacity: 0;
+    visibility: hidden;
+}
+@mixin pointerTop($size: 8px, $color: orange){
+    content: '';
+        border-top: $size solid $color;
+        border-left: $size solid transparent;
+        border-right: $size solid transparent;
+}
+@mixin pointerBottom($size: 8px, $color: orange){
+    content: '';
+        border-bottom: $size solid $color;
+        border-left: $size solid transparent;
+        border-right: $size solid transparent;
+}
+@mixin pointerLeft($size: 8px, $color: orange){
+    content: '';
+        border-top: $size solid $color;
+        border-left: $size solid $color;
+        border-bottom: $size solid transparent;
+}
+@mixin pointerRight($size: 8px, $color: orange){
+    content: '';
+        border-top: $size solid $color;
+        border-right: $size solid $color;
+        border-bottom: $size solid transparent;
+}
+
+@mixin outline($color: #333, $size: 1px, $style: solid) {
+    outline: $size $style $color;
+}
+
+// vendor prefix
+@mixin prefix($name, $argument) {
+    -webkit-#{$name}: #{$argument};
+       -moz-#{$name}: #{$argument};
+        -ms-#{$name}: #{$argument};
+         -o-#{$name}: #{$argument};
+            #{$name}: #{$argument};
+}
+
+// ----
+
+@mixin placeholder {
+  &::-webkit-input-placeholder {@content}
+  &:-moz-placeholder           {@content}
+  &::-moz-placeholder          {@content}
+  &:-ms-input-placeholder      {@content}  
+}
+// end Mixin->Placeholder;
+
+// ----
+
+// Class adjustment elements
+.inline-block {
+    display: inline-block;
+}
+
+.inline-block-cascat {
+    * {
+        display: inline-block;
+        vertical-align: top;
+    }
+}
+.middle {
+    display: inline-block;
+    vertical-align: middle;
+}
+.bottom {
+    display: inline-block;
+    vertical-align: bottom;
+}
+.top {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.elemento {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+@mixin alignV($relative: relative, $top: 50%, $va: translateY(-50%)) {
+    position: $relative;
+    top: $top;
+    transform: $va;
+}
+
+@mixin behavior($display: inline-block, $va: top) {
+    display: $display;
+    vertical-align: $va;
+}
+
+// : Mixins 
+@mixin transition($property: all, $duration: 0.3s, $effect: ease-in-out) {
+	-webkit-transition: $property $duration $effect;
+	-moz-transition: $property $duration $effect;
+	-ms-transition: $property $duration $effect;
+    transition: $property $duration $effect;
+}
+@mixin user-select($value:none) {
+    -webkit-user-select: $value;  
+    -moz-user-select: $value;     
+    -ms-user-select: $value;     
+    user-select: $value;  
+}
+
+@mixin ccX($value: -50%) {
+    -webkit-transform: translateX($value);
+    -moz-transform: translateX($value);
+    -ms-transform: translateX($value);
+    transform: translateX($value);
+}
+
+@mixin ccY($value: -50%) {
+    -webkit-transform: translateY($value);
+    -moz-transform: translateY($value);
+    -ms-transform: translateY($value);
+    transform: translateY($value);
+}
+@mixin translate($value: 0, $value-second: 0) {
+    -webkit-transform: translate($value, $value-second);
+    -moz-transform: translate($value, $value-second);
+    -ms-transform: translate($value, $value-second);
+    transform: translate($value, $value-second);
+}
+@mixin tY($value: 100%) {
+    -webkit-transform: translateY($value);
+    -moz-transform: translateY($value);
+    -ms-transform: translateY($value);
+    transform: translateY($value);
+}
+@mixin tX($value: 100%) {
+    -webkit-transform: translateX($value);
+    -moz-transform: translateX($value);
+    -ms-transform: translateX($value);
+    transform: translateX($value);
+}
+
+@mixin font($size: 12px, $weight: 400, $family: $main, $line-height: 1) {
+    font-size: $size;
+    font-weight: $weight;
+    font-family: $family;
+    line-height: $line-height;
+}
+
+// Mixins Decorates
+
+@mixin back($path, $color: transparent, $repeat: no-repeat, $position: 0 0) {
+    background: $color url($path) $repeat $position;
+}
+
+@mixin outline($color: #333, $size: 1px, $style: solid) {
+    outline: $size $style $color;
+}
+
+@mixin border($color: #333, $size: 1px, $style: solid) {
+    border: $size $style $color;
+}
+@mixin border-top ($color: #333, $size: 1px, $style: solid) {
+    border-top: $size $style $color;
+}
+@mixin border-right ($color: #333, $size: 1px, $style: solid) {
+    border-right: $size $style $color;
+}
+@mixin border-bottom ($color: #333, $size: 1px, $style: solid) {
+    border-bottom: $size $style $color;
+}
+@mixin border-left($color: #333, $size: 1px, $style: solid) {
+    border-left: $size $style $color;
+}
+
+// end Mixins;
+
+//----
+
+//: Media
+
+@media screen and (max-width: 480em) {
+    html, body {
+        font-size: 24px !important;
+    }
+    .container-custom {
+        width: 60% !important;
+        margin: 0 auto !important;
+    }
+    .container { 
+        width: 100% !important; 
+        padding: 0 !important;
+    }
+    
+} // 7680 -> 8k
+
+
+@media screen and (max-width: 320em) {
+    html, body {
+        font-size: 22px !important;
+    }
+    .container-custom {
+        width: 80% !important;
+        margin: 0 auto;
+    }
+    .container { 
+        width: 100% !important; 
+        padding: 0 !important;
+    }
+    
+} // 5120 -> iMac 5k
+
+
+@media screen and (max-width: 160em) {
+    html, body {
+        font-size: 17px !important;
+    }
+    .container-custom {
+        width: 85% !important;
+        margin: 0 auto;
+    }
+    .container { 
+        width: 100% !important; 
+        padding: 0 !important;
+    }
+    
+} // 2560 -> UltraWide
+
+
+@media screen and (max-width: 120em) {
+    html, body {
+        font-size: 14px !important;
+    }
+    .container-custom {
+        width: 85% !important;
+        margin: 0 auto;
+    }
+    .container { 
+        width: 100% !important; 
+        padding: 0 !important;
+    }
+    
+} // 1920 Desktop
+
+
+@media screen and (max-width: 90em) {
+    html, body {
+        font-size: 14px !important;
+    }
+    .container-custom {
+        width: 85% !important;
+        margin: 0 auto;
+    }
+    .container { 
+        width: 100% !important; 
+        padding: 0 !important;
+    }
+    
+} // 1388 =< Desktop
+
+// : Media
+@media screen and (max-width: 60em) {
+    html, body {
+        font-size: 13px !important;
+    }
+    .container-custom {
+        width: 85% !important;
+        margin: 0 auto;
+    }
+    .container { 
+        width: 100% !important; 
+        padding: 0 !important;
+    }
+    
+} // 1280 Desktop
+
+// end Media;
+
+/**
+ * end reuse.scss
+ */

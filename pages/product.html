@@ -1,0 +1,295 @@
+<div role="main" class="product-custom-nkol cc" itemscope itemtype="http://schema.org/Product">
+  {% element 'schema/product' {'product': product} %}
+  <span id="span_erro_carrinho"></span>
+  
+  <div id="loading-product-container">
+    <img src='/loja/img01/big-loading.svg'>
+  </div>
+  
+  <div id="title">
+    {% element 'snippets/breadcrumb' { "class": 'produto-breadcrumb'} %}
+  </div>
+    
+  <form id="form_comprar" method="post" data-app="product.buy-form" action="{{ links.cart_add ~ product.id }}">
+    <div class="row product-geral">
+        <div class="col-sm-12 col-md-6 col-lg-5 side-left collection-products">
+            
+            {% if settings.tipozoom == "padrao" %}
+            <div id="visualBlock" class="product-gallery">
+              {{ productHelper.gallery() }}
+            </div>
+            {% elseif settings.tipozoom == "interno" %}
+              {% if product.images %}
+              <div class="gallery-img clearfix">
+
+                  <div class="imagem overflow-hidden">
+                      <figure>
+                          <img class="lazy" src="{{ product.images[0].full }}" data-zoom-image="{{ product_image.full }}" id="zoom" alt="{{ product.name }}" width="411">
+                      </figure>
+                      <div class="product-flags">
+                        {% if product.featured %}
+                            <div class="flag-featured">
+                              <i class="fa fa-star" aria-hidden="true"></i>
+                              <span>Destaque</span>
+                            </div>
+                          {% endif %}
+                          {% if product.new %}
+                            <div class="flag-new">
+                              <i class="fa fa-bolt" aria-hidden="true"></i>
+                              <span>Lançamento</span>
+                            </div>
+                          {% endif %}
+                          {% if product.free_shipping %}
+                            <div class="flag-shipping">
+                              <i class="fa fa-truck" aria-hidden="true"></i>
+                              <span>Frete Grátis</span>
+                            </div>
+                          {% endif %}
+                      </div>
+                  </div>
+                  <div id="gallery-thumbs" class="gallery-thumbs">
+                      <div class="gallery-box gallery-{{ product.id }}">
+                          <div class="arrow-galley gallery">
+                              {% for key,product_image in product.images %}
+                              <a data-image="{{ product_image.full }}" class="trigger-{{ product.id }}" data-zoom-image="{{ product_image.full }}" alt="{{ product.name }}" title="{{ product.name }}">
+                                <img class="lazy" src="{{ product_image.medium }}" alt="{{ product.name }}">
+                              </a>
+                              {% endfor %}
+                          </div>
+                      </div>
+                      {% if product.variants|length %}
+                          {% for key,value in product.variants %}
+                          <div class="gallery-box gallery-{{ value.id }}" style="display: none;">
+                              <div class="arrow-galley gallery">
+                                {% for key2,product_img in value.images %}
+                                    <a data-image="{{ product_img.full }}" class="trigger-{{ product_image.id }}" data-zoom-image="{{ product_img.full }}" alt="{{ product.name }}" title="{{ product.name }}">
+                                      <img class="lazy" src="{{ product_img.medium }}" alt="{{ product.name }}">
+                                    </a>
+                                {% endfor %}
+                              </div>
+                          </div>
+                          {% endfor %}
+                      {% endif %}
+                  </div>
+              </div>
+              {% endif %}
+              <!-- modal com video -->  
+              <!-- <a href="#janela1" rel="modal">Janela modal</a>--> 
+            {% endif %}
+
+            <div class="product-social">
+              {{ productHelper.icons() }}
+        			{% if settings.social_position == 0 %}
+        				<div class="product-social sidepicture">
+        					{{ productHelper.social() }}
+        				</div>
+        			{% endif %} 
+            </div>
+            
+            {% if not utils.is_mobile %}
+            <div class="product-links">
+                <span class="col-sm-12 col-md-4  produto-recommend">
+                  <a href="#" data-url="{{ links.product_recommend }}&IdProd={{ product.id }}" data-title="{{ product.name }}" class="botao_indique_amigo" data-toggle="modal" data-target="#modal-form" data-modal-width="600px">
+                    {{ Translation('indique_amigo') }}
+                  </a>
+                </span>
+                <span class="col-sm-12 col-md-4 produto-question">
+                  <a href="#" data-url="{{ links.product_question }}&IdProd={{ product.id }}" data-title="{{ product.name }}" class="botao_tire_duvidas" data-toggle="modal" data-target="#modal-form" data-modal-width="600px">
+                    {{ Translation('tire_duvidas') }}
+                  </a>
+                </span>
+                <span class="col-sm-12 col-md-4 produto-continue-buy">
+                  <a href="{{ links.home }}">
+                    Continuar Comprando
+                  </a>
+                </span>
+            </div>
+            {% endif %}
+                
+        </div> <!--/side-left-->
+        
+        <div class="col-sm-12 col-md-6 col-lg-7 side-right">
+            <!--
+            <div class="product-labels">
+                {{ productHelper.labels() }}</br></br>
+            </div>
+            -->
+            <h1 class="color-base" style="font-family: montserrat,sans-serif;margin:0px">{{ product.name }}</h1>
+            <div class="row product-line1">
+                <div class="col-sm-12 product-details-info">
+                <div style="order-bottom: 2px solid #222222;border-top: 2px solid #222222;display: inline-block;margin: 2px 2px;line-height: 20px;">
+                    <p style="display: inline-block;margin: 0;padding: 8px 0;">
+                        <span style="color: #000;font-family: montserrat,sans-serif;font-size: 25px;clear: both;margin: 10px 0;">
+                          R${{ product.price }}
+                        </span>
+                        <meta itemprop="priceCurrency" content="BRL">
+                    </p>
+                     <p style="display: inline-block;margin: 0;padding: 8px 0;"></p>
+                </div>
+                <!-- /produt-preco -->
+                
+                {% if product.brand|length > 0 %}
+                <div class="details-brand">
+                  <span style="color: #000;font-family: montserrat,sans-serif;font-size: 14px;clear: both;margin: 10px 0;">Marca: </span>{{ product.brand }}
+                </div>
+                {% endif %}
+                
+                <!--
+                {% if product.model|length > 0 %}
+                <div class="details-model">
+                  <span>Modelo: </span>{{ product.model }}
+                </div>
+                {% endif %}
+                -->
+                <!-- {{ product.availability }}--> 
+                {% if product.availability|length > 0 %}
+                <div class="details-availability">
+                  {% if product.availability %}
+                  <span style="color: white;font-weight: 700;line-height: 18px;display: inline-block;padding: 3px 8px 4px;background: #A5A5A5;border-radius: 5px;font-family: montserrat,sans-serif;font-size: 14px;clear: both;margin: 2px 0;">Envio {{ product.availability }} {{ Translation('ag_prazo_envio') }} após confirmação do pagamento</span>
+                  {% endif %}
+                </div>
+                {% endif %}
+                
+                <div class="board_htm description">
+                    <span style="color: #000;font-family: montserrat,sans-serif;font-size: 14px;clear: both;margin: 10px 0;"> {{ product.description ? product.description : product.description_small }} </span>
+                </div>
+                
+                {% if product.reference|length > 0 %}
+                <div class="details-productid">
+                  <span>{{ Translation('Referencia') }}: </span>{{ product.reference }}
+                </div>
+                {% endif %}
+                
+                <div class="details-availability">
+                  {{ productHelper.bonus() }}
+                  {{ productHelper.gifts() }}
+                  {{ product.additional_information }}
+                  {% if not product.upon_request and product.available %}
+                      {{ productHelper.wishlist() }}
+                  {% endif %}
+                </div>
+                
+                <div class="produt-price-variants">
+                    {{ productHelper.priceBox() }}
+                </div><!-- /produt-price-variants -->
+               
+                <div class="product-variants">
+                    {{ productHelper.variants() }}
+                </div>
+
+                <div class="produt-preco">
+                  {{ productHelper.pricing() }}
+                </div><!-- /produt-preco -->
+                
+                <div class="produt-quantity">
+                  {{ productHelper.form() }}
+                </div>
+                
+                {% if settings.social_position == 1 %}
+          				<div class="product-social">
+          					{{ productHelper.social() }}
+          				</div>
+          			{% endif %}
+                
+                <div class="helper-shipping">
+                    {{ productHelper.shipping() }}
+                </div>
+                
+                <div class="shipping-result"></div>
+                
+                <div class="additional-message">
+                  {{ product.additional_message }}
+                </div>
+
+                </div><!-- /product-details-info -->
+            </div><!--/product-line1-->
+
+            <!--
+            <div class="produto-orcamento">
+              <span>
+                <a class="color-detail-bg bt-orcamento" href="#" data-url="{{ links.product_question }}&IdProd={{ product.id }}" data-title="{{ product.name }}" data-toggle="modal" data-target="#modal-form" data-modal-width="600px">
+                  SOLICITAR ORÇAMENTO
+                </a>
+              </span>
+            </div>
+            -->
+            
+        </div><!--/ side-right-->
+        
+    </div><!--/ product-geral -->
+  </form>
+  
+<!-- ABAS DO PRODUTO -->
+
+
+<div id="ProdBlock">
+    <div id="loading-tab-container">
+        <img src='{{ tray.paths.system_image }}/big-loading.svg' />
+    </div>
+    <a name="formaPagto"></a>
+    <div id="ProdAbas" class="abasProduto">
+        <ul>
+            {% for key, tab in productTabs %}
+              {% if tab.container_id %}
+              <li id="{{ tab.id }}" {% if key=='description' %}class="aberta" {% endif %}>
+                <a href="#" data-tab-container-id="{{ tab.container_id }}" data-tab-url="{{ tab.url }}">{{ tab.description }}</a>
+              </li>
+              {% endif %}
+            {% endfor %}
+        </ul>
+    </div>
+
+    <div id="descricao" class="prodBox">
+        <div class="board">
+            <div class="board_htm description">
+                {{ product.description ? product.description : product.description_small }}
+            </div>
+        </div>
+    </div>
+
+    <div id="itensInclusos" class="prodBox">
+        <div class="board">
+            {{ product.included_items }}
+        </div>
+    </div>
+
+    <div id="coments" class="prodBox">
+        <div class="board">
+            {% element 'product/comments' %}
+        </div>
+    </div>
+
+    <div id="caracteristicas" class="prodBox">
+        <div class='board'>
+            {% element 'product/properties' %}
+        </div>
+    </div>
+
+    {{ productTabs.custom.content }}
+    {{ productTabs.downloads.content }}
+
+    <div id="garantia" class="prodBox">
+        <img class="loader" src="{{ tray.paths.system_image }}/big-loading.svg" style="display:none;" />
+    </div>
+    <div data-app="product.payment-methods" id="formasPagto" class="prodBox" style="display:none;" ></div>
+</div>
+
+{{ productHelper.bundle() }}
+
+{% if product.related_products %}
+<div class="products-related">
+    <h3 class="related-title color-base-bg color-detail-border-bottom">Produtos Relacionados</h3>
+    <div class="row">
+        {% for related in product.related_products %}
+          <div class="col-sm-3">
+              {% element 'snippets/product' {"product": related} %}
+          </div>
+        {% if loop.index is divisible by(4) %}
+    </div>
+    <div class="row">
+          {% endif %} {% endfor %}
+    </div>
+</div>
+{% endif %}
+
+</div><!--/ product-custom-nkol-->

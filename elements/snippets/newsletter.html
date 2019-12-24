@@ -1,0 +1,29 @@
+<!-- NEWSLETTER 5 -->
+<div class="newsletter5">
+    <div class="containerfull">
+        <div class="news">
+            <div class="container-custom">
+                <div class="row">
+                    <div class="col-xs-12 col-md-5 news-text">
+                        <div>
+                            <p>
+                                <strong>Gostou da nossa Loja?</strong> <br>Cadastre seu e-mail para receber ofertas 
+                            exclusivas da <strong>nossa loja</strong>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-md-7 news-form">
+                        <form action="{{ links.newsletter }}" method="POST">
+                            <input type="hidden" name="loja" value="{{ store.id }}">
+                            <input type="text" name="name" placeholder="Seu nome">
+                            <input name="email" type="email" placeholder="Seu email">
+                            <button class="btn btn-default btn-block news-button color-detail-bg">Cadastrar</button>
+                        </form>
+                        <small>Ao clicar em cadastrar, voc&ecirc; estar&aacute; aceitando receber emails promocionais</small>
+                    </div>
+                </div>
+            </div>
+        </div><!--/ news -->
+
+    </div>
+</div>

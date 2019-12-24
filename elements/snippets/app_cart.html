@@ -1,0 +1,34 @@
+<div class="elements-cart">
+    <a href="{{ links.cart }}">
+        <span class="label-cart">
+            <div class="icon-cart-vector">
+                {% if settings.structure_header == "header3" %}
+                    <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                {% else %}
+                    <i class="color-base fa fa-shopping-cart" aria-hidden="true"></i>
+                {% endif %}
+                <!--
+                <svg viewBox="0 0 46 37" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;">
+                    <g transform="matrix(1,0,0,1,-1235.6,-125.859)">
+                        <g transform="matrix(0.218872,0,0,0.218872,1103.05,1010.17)">
+                            <g transform="matrix(1.95542,0,0,1.95542,-1551.31,-6193.49)">
+                                <path d="M1162.78,1177.46C1162.78,1182.95 1158.32,1187.41 1152.82,1187.41C1147.33,1187.41 1142.87,1182.95 1142.87,1177.46C1142.87,1171.96 1147.33,1167.5 1152.82,1167.5C1158.32,1167.5 1162.78,1171.96 1162.78,1177.46ZM1195.97,1177.46C1195.97,1182.95 1191.51,1187.41 1186.01,1187.41C1180.52,1187.41 1176.06,1182.95 1176.06,1177.46C1176.06,1171.96 1180.52,1167.5 1186.01,1167.5C1191.51,1167.5 1195.97,1171.96 1195.97,1177.46ZM1195.97,1160.86L1140.7,1160.86L1117.47,1107.77L1103.05,1107.77L1103.05,1101.13L1121.81,1101.13L1145.05,1154.23L1195.97,1154.23L1195.97,1160.86ZM1146.85,1140.95L1149.51,1147.59L1195.97,1147.59L1198.62,1140.95L1146.85,1140.95ZM1203.93,1127.68L1141.54,1127.68L1144.2,1134.32L1201.28,1134.32L1203.93,1127.68ZM1206.58,1121.04L1209.24,1114.4L1136.23,1114.4L1138.89,1121.04L1206.58,1121.04Z" style="fill:#8aa701"/>
+                            </g>
+                        </g>
+                    </g>
+                </svg>
+                -->
+            </div>
+        </span>
+        {% if settings.structure_header == "header3" %}
+            <span data-cart="amount" class="color-detail-bg addbuy-amount">
+        {% else %}
+            <span data-cart="amount" class="color-base-bg addbuy-amount">
+        {% endif %}
+        
+            {{ cart.amount }}
+        </span>
+        <!--<div class="title-cart"><span>Meu</span> Carrinho</div>-->
+        <span class="color-detail addbuy-price"><abbr>R$ </abbr><span data-cart="price">{{ cart.price }}</span></span>
+    </a><!--/ link.cart -->
+</div> <!--/ elements-cart -->

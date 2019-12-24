@@ -1,0 +1,173 @@
+/**
+ * login.scss
+ */
+ 
+.form-custom-nkol,
+.custom-nkol-login {
+    
+    .board .caixa-login, 
+    .board .caixa-cadastro {
+        background-color: #fff;
+        
+        .botao-efetuar-login{
+            margin-top: 40px !important;
+        }
+            
+        fieldset{
+            display: block;
+            background: #EDEDED;
+            border-top: 2px solid #000;
+            border-radius: 0 0 10px 10px;
+            padding: 35px 0;
+            border: 0;
+
+            button{
+                float: none;
+                border: 0;
+                border-radius: 20px;
+                width: 50%;
+                color: #fff;
+                margin: 15px auto 0 auto;
+                font-size: 15px;
+                font-weight: normal;
+                position: inherit;
+                background: #000;
+                display: inherit;
+            }
+            
+            .recuperar-senha{
+                text-align: center;
+                margin-top: 5px;
+                a{
+                    color: #000;
+                    text-decoration: none;
+                    text-transform: uppercase;
+                    font-size: .9em;
+                }
+            }
+        }
+        
+        label{
+            display: block;
+            width: 70%;
+            float: none !important;
+            text-align: center;
+            margin: 10px auto;
+            font-family: $main;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        
+        input{
+            border: 0;
+            width: 100% !important;
+            font-size: 15px;
+            padding: 14px 18px 12px;
+            margin: 3px auto;
+            border: 1px solid #ccc;
+        }
+        
+        .bt-efetua-login {
+            float: none;
+        }
+        
+        .login-campos-obrigatorios{
+            margin-top: 10px;
+        }
+        
+        form {
+            position: relative;
+            
+            &:before{
+                content:'';
+                display: block;
+                //background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTBweCIgaGVpZ2h0PSI1MHB4IiB2aWV3Qm94PSIwIDAgNDkgNDkiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgc3R5bGU9ImZpbGwtcnVsZTpldmVub2RkO2NsaXAtcnVsZTpldmVub2RkO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2UtbWl0ZXJsaW1pdDoxLjQxNDIxOyI+ICAgIDxnIHRyYW5zZm9ybT0ibWF0cml4KDEsMCwwLDEsLTYxMS4yNjgsLTIyNS44NikiPiAgICAgICAgPGc+ICAgICAgICAgICAgPGcgdHJhbnNmb3JtPSJtYXRyaXgoMS4wNDIyNSwwLDAsMS4wNDIyNSwzODMuNzA1LC0zMi45NzEyKSI+ICAgICAgICAgICAgICAgIDxjaXJjbGUgY3g9IjI0MS41IiBjeT0iMjcxLjUiIHI9IjIxLjUiIHN0eWxlPSJmaWxsOndoaXRlO3N0cm9rZS13aWR0aDoxLjkycHg7c3Ryb2tlOmJsYWNrOyIvPiAgICAgICAgICAgIDwvZz4gICAgICAgICAgICA8ZyB0cmFuc2Zvcm09Im1hdHJpeCgwLjM3NjIyNiwwLDAsMC4zNzYyMjYsNjI2Ljc2MywyNDEuMzU1KSI+ICAgICAgICAgICAgICAgIDxwYXRoIGQ9Ik0zOS4yODcsNDEuOTU1TDM3LjY2MSwyOS4xOTVDMzcuMTA1LDI0LjgyIDMzLjM4MywyMS41ODUgMjguOTczLDIxLjU4NUwxNi45ODUsMjEuNTg1QzEyLjU3NSwyMS41ODUgOC44NTIsMjQuODIgOC4yOTcsMjkuMTk1TDYuNjcsNDEuOTc5QzYuNTU4LDQyLjg3MyA2LjgzMyw0My45OTcgNy40MjgsNDQuNjcxQzguMDI0LDQ1LjM0NiA4Ljg4MSw0NS45NTggOS43ODEsNDUuOTU4TDM2LjE3Niw0NS45NThDMzcuMDc2LDQ1Ljk1OCAzNy45MzMsNDUuMzM0IDM4LjUzLDQ0LjY1OUMzOS4xMjUsNDMuOTgyIDM5LjQsNDIuODUgMzkuMjg3LDQxLjk1NVpNMjIuOTc4LDBDMjguMTI3LDAgMzIuMzA4LDQuMTgxIDMyLjMwOCw5LjMzQzMyLjMwOCwxNC40NzkgMjguMTI3LDE4LjY2IDIyLjk3OCwxOC42NkMxNy44MjksMTguNjYgMTMuNjQ4LDE0LjQ3OSAxMy42NDgsOS4zM0MxMy42NDgsNC4xODEgMTcuODI5LDAgMjIuOTc4LDBaIiBzdHlsZT0iZmlsbDpibGFjazsiLz4gICAgICAgICAgICA8L2c+ICAgICAgICA8L2c+ICAgIDwvZz48L3N2Zz4=');
+                width: 50px;
+                height: 50px;
+                position: absolute;
+                top: -25px;
+                right: 5%;
+            }
+        }
+        
+        .obriga{
+            border-left: 4px solid #8e5c33;
+            color: #000;
+        }
+        
+        #ou_estado_envio_nacional{
+            float: left;
+            margin-right: 10px;
+        }
+        
+        .dif{
+            font-size: 14px;
+            font-weight: bold;
+        }
+    }
+    
+    .titulo-login,
+    .carrinho-heading{
+        display: none;
+    }
+    
+    .caixa-login {
+        background-color: transparent !important;
+        
+        h3{
+            font-size: 1.6rem;
+            text-transform: none;
+            text-align: center;
+            margin-bottom: 13px;
+            color: #000;
+        }
+    }
+    
+    .caixa-cadastro{
+        background-color: transparent !important;
+        
+        h3{
+            font-size: 1.6rem;
+            text-transform: none;
+            text-align: center;
+            margin-bottom: 13px;
+            color: #000;
+        }
+        
+        .cadastro-desc {
+            display: block;
+            width: 70%;
+            text-align: center;
+            margin: 10px auto;
+            font-size: 1rem;
+        }
+        
+        form{
+            text-align: center;
+            
+            fieldset{
+                padding: 35px 0 60px 0;
+                border: 0;
+                
+                button{
+                    float: none;
+                }
+            }
+            
+            input{
+                color: #ff0000;
+                border: 0;
+                width: 70% !important;
+                border-radius: 0;
+                padding: 14px 18px 12px;
+                display: block;
+                border: 1px solid #808080;
+            }
+        }
+    }
+
+} // } form-custom-nkol
+
+/**
+ * end login.scss
+ */

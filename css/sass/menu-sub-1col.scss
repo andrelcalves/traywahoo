@@ -1,0 +1,151 @@
+
+.menu-sub-1col {
+    .item-menu {
+        &:hover {
+            .menu-sub {
+                opacity: 1;
+                visibility: visible;
+            }
+            
+            &:last-child {
+                .menu-sub {
+                    position: absolute;
+                        top: 100%;
+                        right: 0;
+                        left: auto;
+                    
+                    .menu-item-heir {
+                        
+                        .triangle {
+                            border-left: 0;
+                            border-right: 8px solid rgba(198, 0, 1, 1);
+                            border-top: 8px solid transparent;
+                            border-bottom: 8px solid transparent;
+                            
+                            position: absolute;
+                            right: auto;
+                            left: -8px;
+                        }
+                    }
+                    
+                    .menu-filos {
+                        position: absolute;
+                            top: 0;
+                            left: auto !important;
+                            right: 100% !important;
+                            z-index: 99999999;
+                    }
+                }
+            }
+        }
+        
+        .menu-sub {
+            background-color: #fff;  //configuracoes
+            border: 1px solid $color-base;
+            width: calc(100% + 60px);
+            text-align: justify;
+            
+            position: absolute;
+                top: 99.8%;
+                left: 0;
+                z-index: 198;
+            
+            opacity: 0;
+            visibility: hidden;
+            //@include transition();
+    
+            ul.menu-heir {
+                padding: 0;
+                margin: 0;
+    
+                .menu-item-heir {
+                    position: relative;
+                    display: block;
+                    width: 100%;
+                    padding: 5px 15px;
+                    
+                    .triangle {
+                        border-left: 8px solid $color-base; //configuracoes
+                        border-top: 8px solid transparent;
+                        border-bottom: 8px solid transparent;
+                        
+                        position: absolute;
+                            top: calc(50% - 8px);
+                            right: -8px;
+                            z-index: 99991;
+                            
+                        @include hidden();
+                        //@include transition();
+                        
+                    }
+                    
+                    &:hover {
+                        background-color: $color-base;  //configuracoes
+    
+                        .triangle {
+                            @include visible();
+                        }
+                    }
+                    
+                    h4 {
+                        color: #808080;
+                        padding: 0; 
+                        margin: 0;
+                        text-transform: none;
+                        
+                        a {
+                            color: #808080;
+                        }
+                    }
+                    
+                    a {
+                        color: #808080;
+                        @include font(1rem, 300, $main, 1.5);
+                        text-align: left;
+                        margin: 0;
+                    }
+                    
+    
+                    &:hover {
+                        a {
+                            color: #fff;
+                        }
+                        .menu-filos {
+                            @include visible();
+                        }
+                    }
+                                                
+                    // level 3
+                    .menu-filos {
+                        background-color: #fff;
+                        border: 1px solid $color-base;
+                        width: 100%;
+
+                        text-align: center;
+                        
+                        position: absolute;
+                            top: 0;
+                            left: 100%;
+                            z-index: 9999;
+                            
+                        @include hidden();
+                        //@include transition();
+                        
+                        > div {
+                            @extend .menu-item-heir;
+                            width: 100%;
+                            margin: 0 auto 0;
+                            text-align: left;
+    
+                            a {
+                                text-transform: none;
+                            }
+                        }
+                        
+                    }
+                }
+    
+            }
+        }
+    } // item-menu
+}

@@ -1,0 +1,312 @@
+/**
+ * header-fixed.scss
+ */
+ 
+ /* ACTION FIXED */
+
+.head-fixed {
+    background-color: rgba(39, 42, 47, 1);
+    position: fixed;
+    top: -140px;
+    left: 0;
+    z-index: 1000;
+    width: 100%;
+    visibility: 0;
+    opacity: 0;
+    border-bottom: 2px solid #e2e2e2;
+    
+    .search {
+        margin-top: 16px;
+    }
+
+} // head-fixed
+
+.show-head {
+    height: 70px;
+    top: 0 !important;
+    transition-duration: .2s;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+/* HEADER FIXED */
+
+.header-fixed {
+    background-color: #fff;
+    
+    .cont-decorate {
+        padding: 0;
+
+        //Three Elements Search; Brand and Cart
+        
+        // Search :
+        .app-search {
+            margin-top: 8px;
+            padding: 0;
+            background-color: #fff;
+            
+            form {
+                position: relative;
+                border: 1px solid #ccc;
+                over-flow: hidden;
+                width: 100%;
+
+                fieldset { 
+                    margin: 0; 
+                    padding: 0; 
+                    border: 0;
+                }
+                
+                input[type='search'] {
+                    width: 88%;
+                    height: 50px;
+                    padding: 0 0 0 2em;
+                    border: 0;
+                }
+                .search-button {
+                    background-color: $color-base; //configuracoes
+                    color: $color-detail;
+                    border: none;
+                    width: 50px;
+                    height: 50px;
+                    padding: 0;
+                    font-size: 21px;
+                    text-align: center;
+                    border-radius: 0;
+                    
+                    position: absolute;
+                    top: 50%;
+                    right: 0;
+                    @include ccY();
+                    margin: 0;
+                }
+            }
+        }
+        
+        // end Search;
+        
+        // Brand :
+        .brand {
+            @include font(1rem, 400, $main, 45px);
+            padding: 0;
+            text-align: left;
+            margin-top: 8px;
+            
+            a {
+                display: block;
+                line-height: 50px;
+                height: 100%;
+                width: 100%;
+                
+                img {
+                    max-width: 90%;
+                    max-height: 50px;
+                }
+            
+            }
+        }
+        
+        // Cart :
+        .app-cart {
+            margin-top: 8px;
+            
+            .addbuy-amount {
+                background-color: $color-base; //configuracoes
+                display: inline-block;
+                padding: 0 7px;
+                margin: 0 10px;
+                color: #fff !important;
+            }
+
+            .elements-cart {
+                position: relative;
+                display: inline-block;
+                width: 90%;
+                height: 50px;
+                border: 1px solid #ccc;
+                box-sizing: content-box;
+                background-color: $color-bg;
+
+                a {
+                    text-decoration: none;
+                    text-align: center;
+                    position: relative;
+                    width: 100%;
+                    padding: 0;
+                    display: inline-block;
+                    
+                    .label-cart {
+                        color: #fff;
+                        background-color: transparent;
+                        @include font(1rem, 400, $main);
+                        line-height: 41px;
+
+                        .icon-cart-vector {
+                            display: inline;
+                            position: relative;
+                            top: 5px;
+                            font-size: 25px;
+    
+                            svg {
+                                width: 25px;
+                                height: 25px;
+                            }
+                        }
+                    }
+                    
+                    .title-cart {
+                        @include font(1.2rem, 400, $main);
+                        color: $color-title; //configuracoes
+                        
+                        span {
+                            color: $color-title; //configuracoes
+                        }
+                    }
+                    
+                    .addbuy-price {
+                        color: #fff;
+                        @include font(1rem, 400, $main);
+                        
+                        abbr {
+                            border: 0;
+                        }
+                        
+                    }
+                    
+                }
+                
+            }
+            
+        } // end Cart;
+        
+    }
+    
+} // end header 
+
+/* MENU FIXED */
+
+.head-fixed{
+    
+    .taxobar-fixed {
+        position: relative;
+        z-index: 1040;
+
+        .taxo-position{
+            position: absolute;
+            top: 0;
+    
+            position: relative;
+            min-height: 0;
+            margin-top: 70px;
+
+            .dispenser-fixed {
+                cursor: pointer;
+                width: 70px; 
+                height: 70px;
+                float: left;
+                margin: 0 0 0;
+                text-align: left;
+                margin-top: -70px;
+                margin-left: 17%;
+                
+                .wsymbol {
+                    svg {
+                        height: 70px;
+                        width: 70px;
+                    }
+                }
+                
+                @media screen and (min-width: 62em) {
+                    &:hover {
+                        section {
+                            opacity: 1;
+                            visibility: visible;
+                        }
+                    }    
+                }
+                
+                section {
+                    background-color: #fff;
+                    border: 2px solid $color-base;
+                    border-radius: 2px 2px 0 0;
+                    
+                    width: calc(100% + 1.9px);
+                    
+                    position: absolute;
+                        top: 85%;
+                        left: -1px;
+                        z-index: 9991;
+                    
+                    opacity: 0;
+                    visibility: hidden;
+                    
+                    background-color: #fff;
+                    @include transition();
+                    
+                    .item-menu {
+                        padding: 0 10px 20px 20px;
+                        
+                        display: inline-block;
+                        vertical-align: top;
+                            
+                        width: 16.2%; 
+        
+                        white-space: nowrap;
+                        @media screen and (max-width: 55em) { white-space: normal; }
+                        
+                        &:last-child {
+                            a {
+                                &:after {
+                                    display: none;
+                                }
+                            }
+                        }
+                        
+                        .option-allmenu {
+                            color: $color-title;  //configuracoes  //configuracoes
+                            text-decoration: none;
+                            @include font(.7rem, 700, $main);
+                            border-bottom: 2px solid #eee;
+                            padding: 10px 0 5px;
+                            margin-bottom: 5px;
+                        }
+                        
+                        a {
+                            color: $color-title;  //configuracoes
+                            text-decoration: none;
+                            @include font(1rem, 700, $main);
+                            display: block;
+                            text-transform: none;
+                            position: relative;
+                        }
+                        
+                        .menu-sub {
+                            white-space: normal;
+                            padding: 0;
+                            
+                            a {
+                                color: #8a8a8a;
+                                font-weight: 400;
+                                line-height: 1.5em;
+                            }
+                        } // menu-sub
+                        
+                    } // item-menu
+                } // section
+            } // dispenser
+            
+            // experience click
+            .show-display-taxo {
+                section {
+                    opacity: 1;
+                    visibility: visible;
+                }
+            }
+        }
+        
+    } // taxobar
+} // head-fixed
+
+/**
+ * end header-fixed.scss
+ */

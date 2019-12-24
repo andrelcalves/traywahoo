@@ -1,0 +1,448 @@
+/**
+ * mobile.scss
+ */
+ 
+ /**
+ * DEVICE / MOBILE
+ */
+ 
+ @media (max-width: 768px) {
+     
+    .catalogo-form-filtros .filtros {
+        position: relative;
+    }
+    
+    .catalogo-form-filtros select, 
+    .busca-form-filtros select {
+        max-width: none;
+        min-width: none;
+    }
+     
+    .lista_cor_variacao li div, 
+    .lista_cor_variacao2 li div{
+        width: auto !important;
+        padding: 0 10px !important;
+    }
+     
+    div.board:nth-child(4) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(2) {
+    min-width: 100%;
+    max-width: 100%;
+    }
+    
+    .caixa-cupom label {
+        padding: 20px 0 0 0 !important;
+        text-align: center;
+        clear: both;
+    }
+    
+    #cupon {
+        border: 1px solid #ccc !important;
+        width: 100% !important;
+    }
+    
+    .tablePage span, table span, .Pedidos span {
+        margin-top: 8px;
+    }
+    
+    #formas_envio_frete .valores_carrinho {
+        margin-top: 0;
+    }
+    
+    #formas_envio_frete table tr {
+        padding: 10px;
+    }
+    
+    .custom-nkol-checkout_cart #ProdBlock {
+        display: none;
+    }
+    
+    div#atualizaFormas img {
+        width: 30px;
+    }
+    
+    // pagina de produto conteiner
+    .vitrine-nome, 
+    .vitrine-preco, 
+    .por-preco, 
+    .vitrine-parcela, 
+    .produto-preco, 
+    .precoAvista {
+        width: 100%;
+    }
+}
+ 
+ @media screen and (max-width: 768px) {
+    
+    .zopim {
+        display: block;
+    }
+
+    .col-sm-9 {
+        // fixed espace [of bootstrap] for devices table portrait
+        width: auto;
+    }
+    
+    #NavLogoTray {
+      // fixed scroll horizontal for devices mobile
+      display: inline-block;
+      overflow: hidden;
+    }
+    
+    //PRODUCT
+    .produto-wrapper {
+        .Seguro, .prodCod {
+            display: none !important;
+        }
+        
+        .produto-breadcrumb {
+            display: block;
+            
+            > .breadcrumb-text {
+                display: block;
+            }
+            .breadcrumb-spacer {
+                display: none;
+            }
+            a {
+                color: rgba(3, 50, 101, 1);
+                text-decoration: underline !important;
+                
+                &:before {
+                    content: ' / ';
+                    display: inline-block;
+                    vertical-align: middle;
+                    padding: 6px;
+                    text-decoration: none;
+                }
+            }
+        }
+        
+        #foto_p img {
+            max-width: 244px !important;
+        }
+        
+        .produto-nome {
+            width: 100%;
+            font-size: 0.9em;
+            line-height: 1.4;
+        } /* } produto-nome */
+        
+        #produto_preco {
+            font-size: 0.7em;
+        } /* } produto-preco */
+        
+        #bt_comprar {
+            clear: both;
+            padding: 10px 0;
+            text-align: left !important;
+        }
+        
+        
+        #cepbox {
+            padding: 7px;
+            
+            &:before {
+                display: none;
+            }
+            
+            input[name="cep1"],
+            input[name="cep2"] {
+                padding: 5px 0;
+                text-align: center;
+            }
+            
+            a {
+                margin: 11px 7px 0;
+            }
+        }
+        
+        div#direita.produto-direita.right,
+        div#esquerda.produto-esquerda.left{
+            display: block;
+            float: none;
+            width: 100%;
+        }
+        
+        #info {
+            a {
+                background: rgba(7, 51, 98, 1);
+                color: rgba(221, 172, 2, 1);
+            }
+        }
+        
+        .botao-commerce {
+            background: #ddac02;
+            color: #fff;
+            border: 0;
+        }
+        
+        .botoes.produto-links {
+            span {
+                background-color: #333;
+                
+                display: inline-block;
+                
+                margin: 0 3px 9px;
+                padding: 3px 10px;
+                
+                a {
+                    color: #fff;
+                }    
+            }
+        }
+    } /* } prodcut-wrapper */
+    
+    #AbaCaracteristicas a {
+        font-size: 16px !important;
+        display: block;
+    }
+    
+    .container #ProdBlock {
+        
+        #ProdAbas {
+            
+            #AbaCaracteristicas {
+                font-size: 16px !important;
+            }
+            li a {
+                color: #666;
+                cursor: pointer;
+            }
+            .aberta a {
+                color: rgba(1, 60, 128, 1);
+            }
+        } /* } ProdAbas */
+    } /* } ProdBlock */
+        
+    .Seguro {
+        display: none;
+    }
+    
+     .carrinho-tabs {
+        display: none;
+        
+        ol {
+            display: block;
+        }
+        
+        li {
+            display: block;
+            
+            -webkit-flex: none;
+            -moz-flex: none;
+            -ms-flex: none;
+            flex: none;
+            
+            margin: 0 0 2px;
+            
+            &:first-child {
+              margin-left: 0;
+              padding: 0 7px;
+            }
+            
+            .passo-text {
+                font-size: 0.8em !important;
+            }
+        }
+    }
+
+    /*
+    #tabela_carrinho {
+        
+        tr {
+            background: none;
+            border: 1px solid #ccc;
+            
+            padding: 10px;
+            margin: 6px 0 0;
+            display: block;
+            
+            &:first-child {
+                display: none;
+            }
+        }
+        
+        td {
+            border: 0;
+            
+            display: block;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            text-align: center;
+            width: 100%;
+            
+            &:first-child {
+                border-top: 1px solid #f9f9f9;
+            }
+            
+            &:first-child + td {
+                border-right: 1px solid #f9f9f9;
+            }
+            
+            &:last-child {
+                border-bottom: 1px solid #f9f9f9;
+            }
+            
+            h3, h4, h5 {
+                margin: 0;
+            }
+            
+            h4 {
+                margin: 6px 0 8px;
+            }
+            
+            img {
+                border: none;
+            }
+        }
+    }
+    */
+
+    .refresh {
+        margin: 10px auto 5px;
+    }
+    
+    .bt-excluir {
+        display: inline-block;
+        height: 40px;
+        width: 40px;
+        margin: 0 auto;
+    }
+    
+    .caixa-forma-frete {
+        
+        tr {
+            background: none;
+            display: block;
+        }
+        
+        th {
+            display: block;
+        }
+        
+        td {
+            display: block;
+        }
+        
+        .bt-cep {
+            display: block;
+            
+            margin: 10px 0;
+        }
+        
+        .bt-cupom {
+            display: block;
+            
+            margin: 10px 0;
+        }
+        
+        #calculoFrete {
+            float: left;
+            
+            margin: 0;
+            
+            label {
+                font-size: 1.4em;            
+            }
+            
+            input[name="cep1"],
+            input[name="cep2"] {
+                border: 1px solid rgba(1, 60, 128, 1);
+                
+                padding: 8px 1em 6px;
+            }
+            
+            input[name="cep1"] {
+                border: 1px solid rgba(1, 60, 128, 1);
+                
+                padding-left: 1.4em;
+                padding-right: 1.4em;
+            }
+        }
+    }
+    
+    #formas_envio_frete {
+        padding: 2px;
+        
+        tr {
+            
+            td {
+                padding: 0;
+                
+                &:first-child + td {
+                    width: auto;
+                }
+                
+                &:first-child + td + td {
+                    margin: 10px 0 10px;
+                    width: 100%;
+                }
+            }
+            
+            img{
+                display: none;
+            }
+        }
+    }
+    .carFretePara {
+        margin: 0;
+        text-align: center;
+    }
+
+    
+    // Identification
+    
+    .caixa-cadastro fieldset, .app-cart .caixa-login fieldset {
+        padding: 10px 16px 12px;
+    }
+    .app-cart .caixa-cadastro fieldset {
+        padding: 10px 2px 12px !important;
+    }
+    .container {
+        padding: 0;
+        margin: 0 auto 0;
+    }
+    
+    .board {
+        
+        .caixa-login, 
+        .caixa-cadastro {
+            
+            display: block;
+            
+            float: none;
+            
+            margin: 50px 0 20px;
+            
+            min-height: 220px;
+            padding-bottom: 6px;
+            
+            width: 100%;
+        }
+    }
+
+} /* } Viewport <= 768px */
+
+
+@media screen and (max-width: 413px) {
+
+    .app-cart {
+        .caixa-produto {
+            .caixa-botoes {
+                .botao-prosseguir-compra {
+                    display: block;
+                    float: left;
+                    margin: 13px 5px 0;    
+                }
+            }/* } caixa-botoes */
+            
+        }/* } caixa-produto */
+        
+    }/* } app-cart */
+    
+}/* } Viewport <= 413px */
+
+/**
+ * end mobile.scss
+ */

@@ -1,0 +1,31 @@
+/**
+ * page-extra.scss
+ */
+ 
+.page-extra{
+    
+    .board_htm p img {
+        height: auto;
+    }
+    
+    #banner_title{
+        display: none;
+    }
+    
+    .page-content{
+        font-size: 1.4rem;
+        
+        > *{
+            background: #fff;
+            padding: 30px;
+        }
+    }
+    
+    .Seguro{
+        display: none;
+    }
+}
+
+/**
+ * end page-extra.scss
+ */

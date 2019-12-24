@@ -1,0 +1,243 @@
+/**
+ * page-visitados.scss
+ */
+ 
+ .page-navegacao_visitados{
+    
+    .breadcrumb{
+        
+        margin: 10px 0;
+        padding: 0;
+        
+        .breadcrumb-text + .breadcrumb-spacer,
+        .board h1.color,
+        .board hr {
+            display: none;
+        }
+        
+        .Mapa {
+            margin: -22px 0 0 0;
+        }
+        
+    }
+    
+    .board.BoxVisitados {
+        margin-bottom: 30px;
+    }
+    
+    .BoxVisitados h2{
+        color: #000;
+        font-size: 1.5rem;
+        line-height: 3rem;
+        margin: 30px 0 0 0;
+        text-transform: uppercase;
+    }
+    
+    .catalogo-galeria .change{
+        display: none;
+    }
+    
+    #Vitrine {
+        margin: 0 0 15px 0;
+        text-align: left;
+        
+        ul {
+            li {
+                
+                .bts2 {
+                    font-family: Arial,Helvetica,sans-serif;
+                    font-weight: 700;
+                    border: 2px solid #3d4445;
+                }
+                
+                .nomeProd a{
+                    color: #000;
+                    font-family: Arial,Helvetica,sans-serif;
+                    font-size: 1.3em;
+                    font-weight: 400;
+                    line-height: 1.3;
+                    text-align: left;
+                    text-transform: none;
+                    margin: 15px 0 0;
+                    min-height: 50px;
+                    
+                    @media screen and (max-width:767px){
+                        margin-bottom: 7px;
+                        font-size: 1rem;
+                    }
+                }
+                
+                .valores > br {
+                   display: none; 
+                }
+                
+                .valores {
+                    color: #000;
+                    font-family: Roboto,sans-serif;
+                    font-size: 1.1rem;
+                    font-weight: 400;
+                    line-height: 1.4rem;
+                    
+                    .oculta_destaque{
+                        display: none;
+                    }
+                    
+                    .preco-avista.precoAvista {
+                        color: red;
+                        font-weight: normal;
+                        font-size: 1.1rem;
+                        font-weight: 700;
+                        display: inline;
+                        margin-left: 0;
+                    }
+                    
+                    .precoAvista {
+                        color: blue;
+                        display: block;
+                        font-family: Roboto,sans-serif;
+                        font-size: 2rem;
+                        font-weight: 700;
+                        line-height: 2.5rem;
+                        margin-left: 0;
+                    }
+                    
+                    .precoAvista + br{
+                        display: none;
+                    }
+                    
+                    .txt-avista > span,
+                    .txt-com-desconto > span,
+                    .txt-corparcelas > span{
+                        color: #868686 !important;
+                        font-weight: normal;
+                    }
+                    
+                    span,
+                    strong {
+                        color: #868686;
+                        font-family: Roboto,sans-serif;
+                        font-size: 1.1rem;
+                        line-height: 0;
+                        font-weight: 400;
+                        
+                        > strong {
+                            color: red;
+                            font-weight: 700;
+                        }
+                        
+                        > span {
+                            color: red;
+                            font-weight: 700;
+                        }
+                        
+                    }
+            
+                }
+            }
+        }
+    }
+    
+    .vitrineVisitados {
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        border-top: 0;
+           
+        li{
+            background: #fff;
+            margin: 10px;
+            min-height: 270px;
+            margin: 5px 0px;
+            max-width: 33%;
+            position: relative;
+            padding: 15px;
+            vertical-align: top;
+            width: 33%;
+            border: 1px solid #eee;
+            
+            -webkit-box-flex: 1 auto;
+            -moz-box-flex: 1 auto;
+            -webkit-flex: 1 auto;
+            -ms-flex: 1 1 auto;
+            flex: 1 auto;
+            
+            &:nth-child(2) {
+                margin: 5px 10px;
+            }
+            
+            .bts2 {
+                background: #fff;
+                border-radius: 20px;
+                border: 1px solid #3d4445;
+                color: #3d4445;
+                font: 400 11px/20px $font;
+                height: 20px;
+                padding: 0;
+                position: absolute;
+                right: 10px;
+                text-align: center;
+                top: 8px;
+                width: 20px;
+            }
+            
+            a{
+                text-decoration: none;
+            }
+            
+            .Foto{
+                border-bottom: 1px solid #eee;
+                font-size: 0;
+                height: 120px;
+                margin-bottom: 15px;
+                text-align: center;
+            }
+            
+            .botao-commerce{
+                margin: 5px auto;
+                display: none;
+            }
+            
+            .nomeProd a {
+                color: #3d4445;
+                display: block;
+                height: 36px;
+                margin-bottom: 15px;
+                overflow: hidden;
+                font-size: 1.5rem;
+                line-height: 1.8rem;
+            }
+            
+            .valores {
+                color: #aaa;
+                display: block;
+                font-size: 1.5rem;
+                line-height: 1.8rem;
+            }
+       }
+        
+    }
+    
+    @media screen and (max-width: 480px){
+        
+        .vitrineVisitados {
+            
+            display: block;
+            
+            li{
+                margin: 0 0 10px 0;
+                max-width: none;
+                width: 100%;
+                
+                &:nth-child(2) {
+                    margin: 0 0 10px 0;
+                }
+            }
+        }
+    }
+} 
+
+/**
+ * end page-visitados.scss
+ */

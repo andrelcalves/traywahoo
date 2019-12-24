@@ -1,0 +1,12 @@
+<svg width="100%" height="100%" viewBox="0 0 36 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;">
+    <g transform="matrix(1,0,0,1,-611.877,-4054.42)">
+        <g>
+            <g transform="matrix(1.51293,0,0,1.51293,-1037.19,-1407.49)">
+                <circle cx="1101.58" cy="3621.75" r="10.451" style="fill:white;stroke-width:1.32px;stroke:black;"/>
+            </g>
+            <g transform="matrix(0.164497,0,0,0.164497,622.84,3462.38)">
+                <path d="M40,3717.16L30.103,3708.5L1.806,3732.76C2.834,3733.71 4.223,3734.31 5.754,3734.31L74.246,3734.31C75.771,3734.31 77.154,3733.71 78.177,3732.76L49.897,3708.5L40,3717.16ZM52.383,3706.19L80,3729.66L80,3682.16L52.383,3706.19ZM0,3682.18L0,3729.66L27.617,3706.19L0,3682.18ZM78.194,3678.71C77.166,3677.75 75.783,3677.16 74.246,3677.16L5.754,3677.16C4.229,3677.16 2.846,3677.76 1.817,3678.72L40,3711.45L78.194,3678.71Z" style="fill:black;"/>
+            </g>
+        </g>
+    </g>
+</svg>

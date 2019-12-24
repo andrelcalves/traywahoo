@@ -1,0 +1,216 @@
+header ::-webkit-input-placeholder { color: $color-bg; }
+header :-moz-placeholder { color: $color-bg; }
+header ::-moz-placeholder { color: $color-bg; }
+header :-ms-input-placeholder { color: $color-bg; }
+
+/**
+ * header7.scss
+ */
+ 
+ .header7 {
+    //min-height: 100px;
+
+    //@include back('../img/back-layout.jpg', rgba(25, 66, 3, 1), repeat-x, 0 0);
+    //@media screen and (max-width: 90em) { background-position: center 0; }
+    
+    .banda {
+        background-color: rgba(252, 251, 253, .88); // path; background-color; repeat; position 
+
+        > div > div {
+            padding: .3em 0;
+        }
+
+    } // end banda
+    
+    .cont-decorate {
+        padding-top: 10px;
+        background-color: #fff;
+        
+        // Brand :
+        .brand {
+            @include font(1rem, 400, $main, 45px);
+            padding: 0;
+            
+            h1, h2 {
+                margin: 0;
+
+                a {
+                    display: block;
+                    line-height: 50px;
+                    height: 100%;
+                    width: 100%;
+                    
+                    svg, img {
+                        max-width: 95%;
+                        max-height: 85px;
+                        padding-bottom: 10px;
+                    }
+                }
+            }
+        }
+        
+        // end Brand;
+        
+        .item-tel {
+            display: block;
+            position: relative;
+            margin-top: 16px;
+            
+            svg {
+                width: 15px;
+                height: 15px;
+                display: inline-block;
+                vertical-align: middle;
+                margin-right: 5px;
+                
+                position: absolute;
+                top: 2px;
+                left: 0;
+            }
+            
+            .tel-number {
+                @include font(1.3rem, 400, $main, 1.1);
+                position: absolute;
+                top: 0;
+                left: 20px;
+            }
+            
+            .tel-central {
+                color: #bbb;
+                text-transform: uppercase;
+                font-size: 8.5px;
+                position: absolute;
+                top: 22px;
+                left: 20px;
+            }
+        } // end item-tel;
+        
+        .menu-inst a {
+            color: #000;
+            @include font(0.8rem, 600, $main, 1.1);
+            padding-right: 20px;
+            
+            &:hover {
+                color: #d82876;
+            }
+        }
+        
+        .elements-customer {
+            color: #4a4a4a;
+            margin-top: 16px;
+
+            i {
+                position: relative;
+                top: 4px;
+                float: left;
+                margin-right: 4px;
+                font-size: 14px;
+            }
+            
+            p {
+                @include font(0.9rem, 300, $main, 1.1);
+                display: inline-block;
+                vertical-align: middle;
+                color: #808080;
+                
+                a {
+                    @include font(0.9rem, 700, $main, 1.1);
+                }
+            }
+        } // end element-costumer
+        
+        .socialmedia {
+            margin-left: 8px;
+
+            .facebook i,
+            .twitter i,
+            .youtube i,
+            .instagram i,
+            .pinterest i{
+                font-size: 14px;
+                margin: 0 3px;
+            }
+        }
+        
+        // Cart :
+        .app-cart {
+            
+            .addbuy-amount {
+                background-color: $color-base; //configuracoes
+                display: inline-block;
+                padding: 0 7px;
+                margin: 0 10px;
+                color: #fff !important;
+            }
+
+            .elements-cart {
+                margin-top: 5px;
+                position: relative;
+                display: inline-block;
+                width: 90%;
+                height: 50px;
+                border: 0;
+                border-left: 2px solid rgba(0,0,0,0.1);
+                box-sizing: content-box;
+                background-color: #f8f8f8;;
+                
+
+                a {
+                    text-decoration: none;
+                    text-align: center;
+                    position: relative;
+                    width: 100%;
+                    padding: 0;
+                    display: inline-block;
+                    
+                    .label-cart {
+                        color: #fff;
+                        background-color: transparent;
+                        @include font(1rem, 400, $main);
+                        line-height: 41px;
+
+                        .icon-cart-vector {
+                            display: inline;
+                            position: relative;
+                            top: 5px;
+                            font-size: 25px;
+    
+                            svg {
+                                width: 25px;
+                                height: 25px;
+                            }
+                        }
+                    }
+                    
+                    .title-cart {
+                        @include font(1.2rem, 400, $main);
+                        color: $color-title; //configuracoes
+                        
+                        span {
+                            color: $color-title; //configuracoes
+                        }
+                    }
+                    
+                    .addbuy-price {
+                        color: #fff;
+                        @include font(1rem, 400, $main);
+                        
+                        abbr {
+                            border: 0;
+                        }
+                        
+                    }
+                    
+                }
+                
+            }
+            
+        } // end Cart;
+        
+    }
+        
+} // end header 
+
+/**
+ * end header7.scss
+ */

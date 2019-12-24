@@ -1,0 +1,157 @@
+<div class="item-product-3">
+    <div itemscope itemtype="http://schema.org/Product" role="main" class="wpp-product bg-contrast">
+        <a href="{{ product.link }}" itemprop="url">
+            <div class="product-image">
+                {% set loading = tray.paths.system_image ~ "/loading.gif" %}
+                <div class="product-image2">
+                    {% if not utils.is_mobile %}
+                        <img class="img-responsive lazy-tray" src="{{ product.images[0].full }}" alt="{{ product.name }}">
+                        {% if product.images[1]|length > 0 %}
+                        <div class="second-image">
+                            <img class="img-responsive lazy-tray" src="{{ product.images[1].full }}" alt="{{ product.name }}">
+                        </div>
+                        {% endif %}
+                    {% else %}
+                        <img class="img-responsive lazy-tray" src="{{ product.images[0].full }}" alt="{{ product.name }}">
+                    {% endif %}
+                </div>
+                <div class="product-name" itemprop="name">
+                    <h3>{{ product.name }}</h3>
+                </div>
+                <section class="btns-store">
+                    
+                    {% if product.featured %}
+                        <div class="type-button btn-feat">
+                            <h6 class="color-detail-bg">Destaque</h6>
+                            <svg width="100%" height="100%" viewBox="0 0 21 20" version="1.1" 
+                                 xmlns="http://www.w3.org/2000/svg" 
+                                 xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <g transform="matrix(1,0,0,1,-372.199,-1180.87)">
+                                    <g transform="matrix(1.27718,0,0,1.27718,229.988,945.884)">
+                                        <path d="M126.524,189.13L122.154,188.717C121.879,188.692 121.641,188.517 121.528,188.254L119.963,184.46C119.713,183.834 118.824,183.834 118.574,184.46L117.021,188.254C116.921,188.517 116.67,188.692 116.395,188.717L112.025,189.13C111.374,189.193 111.111,190.006 111.6,190.445L114.893,193.337C115.105,193.525 115.193,193.8 115.13,194.076L114.141,198.132C113.991,198.771 114.68,199.296 115.256,198.959L118.899,196.817C119.137,196.68 119.425,196.68 119.663,196.817L123.306,198.959C123.882,199.296 124.571,198.783 124.421,198.132L123.444,194.076C123.381,193.8 123.469,193.525 123.682,193.337L126.975,190.445C127.451,190.006 127.175,189.193 126.524,189.13" style="fill-rule:nonzero;"/>
+                                    </g>
+                                </g>
+                            </svg>
+                        </div>
+                    {% endif %}
+                    
+                    {% if product.free_shipping %}
+                        <div class="type-button btn-ship">
+                            <h6 class="color-detail-bg">Frete Grátis</h6>
+                            <svg width="100%" height="100%" viewBox="0 0 23 16" version="1.1" 
+                                 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+                                <g transform="matrix(1,0,0,1,-370.899,-1209.22)">
+                                    <g transform="matrix(0.0380717,0,0,0.0380717,370.407,1201.47)">
+                                        <path d="M305.058,329.286L305.058,570.82L497.351,534.329L497.351,416.644C497.351,411.718 501.642,407.892 506.536,408.454L530.194,412.115C534.356,412.593 537.499,416.116 537.499,420.305L537.499,557.022C537.499,560.907 534.786,564.265 530.987,565.083L320.487,610.344C310.315,612.532 299.796,612.555 289.614,610.413L81.373,566.609C77.635,565.823 74.927,562.572 74.828,558.755L71.23,419.907C71.118,415.553 74.411,411.861 78.751,411.48L255.637,395.937C258.705,395.668 261.367,393.711 262.539,390.863L289.187,326.147C292.628,317.796 305.058,320.254 305.058,329.286ZM69.23,250.204L13.721,368.855C11.008,374.653 15.649,381.195 22.018,380.552L230.482,359.488C233.428,359.19 235.987,357.336 237.189,354.63L304.264,203.519L75.208,245.589C72.587,246.071 70.36,247.79 69.23,250.204ZM304.264,203.518L375.24,359.355C376.48,362.078 379.099,363.916 382.082,364.156L590.151,380.888C596.422,381.393 600.924,374.972 598.314,369.248L544.05,250.284C542.928,247.824 540.67,246.071 538.009,245.592L304.264,203.518Z" style="fill-rule:nonzero;"/>
+                                    </g>
+                                </g>
+                            </svg>
+                        </div>
+                    {% endif %}
+                    
+                    {% if product.price_offer > 0 and product.show_price %}
+                    <div class="type-button btn-offer">
+                        <h6 class="color-detail-bg">Oferta</h6>
+                        <svg width="100%" height="100%" viewBox="0 0 20 16" version="1.1" 
+                             xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <g transform="matrix(1,0,0,1,-700.151,-1234.3)">
+                                <g transform="matrix(0.641529,0,0,0.641529,510.481,1068.69)">
+                                    <path d="M314.111,259.695C313.72,260.07 313.72,260.689 314.095,261.08L323.446,270.594L313.557,280.793C313.182,281.184 313.199,281.803 313.573,282.178C313.769,282.357 314.013,282.455 314.258,282.455C314.518,282.455 314.763,282.357 314.958,282.162L325.515,271.279C325.89,270.904 325.89,270.285 325.515,269.91L315.496,259.711C315.105,259.337 314.486,259.32 314.111,259.695ZM307.725,281.999C307.904,282.178 308.148,282.259 308.409,282.259L308.425,282.259C308.686,282.259 308.93,282.162 309.109,281.982L319.667,271.116C320.041,270.725 320.041,270.122 319.65,269.747L308.311,258.424C308.132,258.245 307.871,258.147 307.627,258.147L296.695,258.163C296.157,258.163 295.717,258.587 295.717,259.125L295.652,269.861C295.652,270.122 295.75,270.383 295.945,270.562L307.725,281.999ZM301.097,261.976C301.906,261.976 302.562,262.632 302.562,263.441C302.562,264.251 301.906,264.907 301.097,264.907C300.287,264.907 299.631,264.251 299.631,263.441C299.631,262.632 300.287,261.976 301.097,261.976Z" />
+                                </g>
+                            </g>
+                        </svg>
+        
+                    </div>
+                    {% endif %}
+                    
+                    {% if product.new %}
+                    <div class="type-button btn-new">
+                        <h6 class="color-detail-bg">Lançamento</h6>
+                        <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                        	 width="100%" height="100%" viewBox="0 0 52.371 52.37" style="enable-background:new 0 0 52.371 52.37;"
+                        	 xml:space="preserve">
+                        	<g>
+                        		<path d="M26.185,0c0,0-10.073,7.816-10.073,27.016c0,12.314,3.724,20.015,8.573,21.33V35.951c0-0.828,0.671-1.5,1.5-1.5c0.829,0,1.5,0.672,1.5,1.5v12.395c4.849-1.315,8.572-9.016,8.572-21.33C36.257,7.594,26.185,0,26.185,0z M26.066,14.818c-1.729,0-3.418-0.155-4.914-0.438c1.465-4.721,3.531-7.901,5.051-9.761c1.516,1.837,3.571,4.989,5.026,9.715C29.677,14.648,27.896,14.818,26.066,14.818z"/>
+                        		<path d="M13.408,35.504c-3.007,0-5.444,2.081-5.444,4.648V52.37l9.862-7.296c-1.463-2.496-2.556-5.737-3.201-9.57H13.408z"/>
+                        		<path d="M38.96,35.504h-1.216c-0.646,3.833-1.738,7.074-3.201,9.57l9.862,7.296V40.152C44.405,37.585,41.968,35.504,38.96,35.504z"/>
+                        	</g>
+                        </svg>
+                    </div>
+                    {% endif %}
+                    
+                </section><!--/ btns-store-->
+            </div>
+            
+            <div class="color-base-bg bt-buy">
+                <i class="color-detail fa fa-shopping-cart" aria-hidden="true"></i>
+            </div>
+            <!--
+            <div class="btn-buy">
+                {{ Image('buy') }}
+            </div>
+            -->
+            
+            <div class="price-all">
+              {% if product.available %}
+                {% if product.stock %}
+                <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+                  {% if product.upon_request %}
+                    <div class="sobconsulta">Produto sob consulta!<!--{{ Image('upon_request') }}--></div>
+                  {% else %}
+                    {% if product.has_other_prices %}
+                      <span>A partir:</span>
+                    {% endif %}
+                    {% set price = product.price_offer > 0 ? product.price_offer : product.price %}
+                    {% set promotion = (product.price_offer|replace({',': '.'})  > 0) %}
+                    {% if promotion %}
+                       <div class="pr-without-off">
+                            {{- Translation('de') -}}: <abbr class="currency" title="BRL"> {{- settings.currency -}} </abbr> {{- product.price|currency -}}
+                        </div>
+                    {% endif %}
+                    <div class="pr-off"> 
+                        <span class="word-offer">Por:</span>
+                        {% if settings.structure_color_price == "structure-color-1" %}
+                            <abbr class="color-base currency" title="BRL"> {{- settings.currency -}} </abbr>
+                        {% elseif settings.structure_color_price == "structure-color-2" %}
+                            <abbr class="color-detail currency" title="BRL"> {{- settings.currency -}} </abbr>
+                        {% endif %}
+                        <meta itemprop="priceCurrency" content="{{ product.price }}">
+                        <span class="price-currency-home" itemprop="price" content="{{ product.price_offer }}">
+                           {{ price|currency }}
+                        </span>
+                    </div>
+                    
+                    <div class="installments-pr">
+                        
+                    </div>
+                
+                  {% endif %}
+                  </div>
+                {% else %}
+                  <div class="esgotado">Esgotado!</div>
+                {% endif %}
+              {% else %}
+                <div class="indisponivel">Produto indisponível</div>
+              {% endif %}
+            </div>
+            
+            {% if not product.has_other_prices %}
+                {% if promotion %}
+                <div class="setby">
+                    {% set price        = product.price %}
+                    {% set price_offer  = product.price_offer %}
+                    
+                    {% set res_price   = price - price_offer %}
+                    {% set setby       = res_price / price * 100 %}
+                    {% if setby >= 1 %}
+                    <span class="color-detail-bg style-number-format">-{{ setby|number_format }}%</span>
+                    {% endif %}
+                </div>
+                {% endif %}
+            {% endif %}
+
+        </a>
+    </div>
+</div>
+
+

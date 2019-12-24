@@ -1,0 +1,527 @@
+/**
+ * pages.scss
+ */
+  
+.selectedPg.btns-paginator {
+    background-color: #454545;
+    color: #fff;
+}
+
+.btns-paginator.selectedPg,
+.btns-paginator > a {
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    height: 25px;
+    min-width: 25px;
+    line-height: 25px;
+    font-size: 13px;
+    font-weight: 500;
+    border-radius: 5px;
+    padding: 0;
+}
+ 
+ .page-content {
+    width: 70%;
+    @media screen and (max-width: 105em) { width: 80%;  }
+    @media screen and (max-width: 90em)  { width: 95%;  }
+    @media screen and (max-width: 86em)  { width: 98%;  }
+    @media screen and (max-width: 80em)  { width: 99.6%;}
+    
+    margin: 0 auto 0;
+}
+
+
+.page-login {
+    text-align: left;
+    
+    .titulo-login {
+        font-size: 0;
+        padding: 1.4rem;
+        
+        &:before {
+            content: '\00C1rea de Acesso';
+            
+            display:block;
+            
+            color: #9a1a1d;
+            
+            @include font(1.5rem, 600, $main);
+        }
+        &:after {
+            content: 'Para acessar digite seu email e senha ou cadastre-se para criar uma conta';
+            
+            display:block;
+            
+            color: #666;
+            @include font(.88rem, 600, $roboto);
+        }
+    }
+    
+    .caixa-cadastro,
+    .caixa-login {
+        text-align: left;
+        border-radius: 2px;
+        
+        margin: 1em;
+        @media screen and(max-width: 768px) { margin: 1em 0; }
+        
+        width: 46%;
+        @media screen and(max-width: 768px) { width: 100%; }
+        
+        background-color: #eee;
+        
+        form {
+            position: relative;
+            
+            p { 
+                position: static;
+            }    
+            
+            fieldset {
+                border: 0; padding: 0; margin: 0;
+            }
+            
+            label {
+                font-size: 0;
+                display: block;
+                float: left;
+                
+                width: 99%;
+                
+                input {
+                    padding: .8em;
+                    border: 0;
+                    border-radius: 2px;
+                    font-size: .9rem;
+                    border: 1px solid #d9d9d9;
+                    
+                    @include placeholder {
+                        color: #333;
+                        font-size: .88rem;
+                    }
+                }
+                
+            }
+            
+            button {
+                position: absolute;
+                right: 5.2%;
+            }
+            
+        }
+        
+        .campo-email input#email_cadastro {
+            width: 70% !important;
+            @media screen and (max-width: 51em) { width: 56%; }
+        }
+        
+        .login-campos-obrigatorios {
+            display: none;
+        }
+    
+    }
+    
+    .caixa-login {
+        button {
+            bottom: 2em;
+        }
+        .recuperar-senha {
+            clear: both;
+            
+            a {
+                color: #ce171e;
+                @include font(1rem, 500, $roboto, 2);
+            }
+        }
+    }
+    
+    button.botao-commerce.botao-efetuar-login {
+        bottom: 33px;
+    }
+    
+    button.botao-commerce.botao-efetuar-login,
+    button.botao-commerce.botao-novo-cadastro.pointer {
+        border: 0;
+        color: #fff;
+        
+        padding: .9em;
+    }
+    
+    
+    
+} //page-login
+
+.page-register {
+    .container2 {
+       padding: 10px; 
+    }
+
+}
+
+
+// Category and Search
+
+.page-search,
+.page-catalog {
+    
+    .container-catalog {
+        display: inline-block;
+        margin-top: 40px;
+    }
+    
+    .product-item {
+        margin-right: 15px;
+        margin-left: 15px;
+    }
+    .wrapper-breadcrumb {
+        margin-top: 15px;
+        padding-bottom: 10px;
+    }
+    
+    .breadcrumb {
+        font: 400 12px/12px $roboto;
+        padding: 0 10px 0;
+        margin-top: 17px;
+        float: left;
+    }
+    
+    .category-title {
+        font: 700 30px/30px $roboto;
+        color: #9a1a1d;
+        display: inline-block;
+    }
+    
+    .catalogo-form-filtros {
+        .filtros {
+            margin-right: 20px;
+        }
+    }
+    
+    .catalogo-display {
+        font: 400 12px/2px $roboto;
+        color: #666;
+        
+        strong.color {
+            color: #9a1a1d;
+        }
+    }
+    
+    .catalogo-pages {
+
+        .btn-proxima-pagina {
+            margin: 0 10px 0 10px;
+        }
+        
+        .btn-pagina-anterior {
+            margin: 0 10px 0 10px;
+        }
+    }
+    .container-filter {
+        border: 1px solid #f5f5f5;
+        padding: 11px 0 5px;
+        margin-bottom: 15px;
+        display: inline-block;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 800px) { 
+    
+	.page-search,
+	.page-catalog {
+	    
+		.product-item {
+		    float: none;
+		    display: inline-block;
+		}
+		
+		.container-catalog {
+		    text-align: center; 
+		}
+	}
+}
+
+
+//:: Internal Pages
+
+// Internal PAGES 
+@media screen and (max-width: 960px) {
+    
+    body{   
+        min-width: 0;
+    }
+    
+    .center{
+        width: auto;
+    }
+    
+    #Page{
+        padding: 0;
+    }
+    
+    .Seguro{ 
+        position: static;
+    }
+    
+    .products-visited,
+    #NavVisitados,
+    #NavTagCloud{
+        display: none;
+    }
+    
+
+   // PAGE PRODUCT :
+    .page-product{
+        .Seguro {
+            display: none!important;
+        }
+        #esquerda{
+            float: none;
+            width: 99.9%;
+        }
+        
+        #direita{
+            float: none;
+            width: 99.9%;
+        }
+        
+        #quantidade{
+            float: none;
+        }
+        
+        .produto-links{
+            border: 1px solid #ccc;
+            
+            > span{
+                display: block;
+                border-top: 1px solid #ccc;
+                
+                &:first-child{
+                    border-top: none;
+                }
+            }
+        }
+        
+        #foto_p img{
+			max-width: 100% !important;
+		}
+        
+        .produto-esquerda{
+            
+            #comparar{
+                
+                input[type='checkbox']{
+                    display: inline-block;
+                    float: none;
+                    margin: 3px 5px 0 0;
+                    vertical-align: top;
+                }
+                
+                label{
+                    color: #000;
+                }
+            }
+        }
+        
+        .selo-ambiente-seguro{
+            display: none;
+        }
+        
+        .produto-nome{
+            margin: 0;
+        }
+        
+        .prodCod{
+            position: static;
+        }
+        
+        .board_htm table {
+			width: 100% !important;
+		}
+        
+        #ProdAbas{
+            margin: 0;
+            padding: 0;
+            
+            li{
+                display: block;
+                margin: 0;
+                
+                a{
+                    border-radius: 0;
+                }
+            }
+            
+            .aberta{
+                display: block;
+                margin: 0;
+                
+                a{
+                    border-radius: 0;
+                }
+            }
+        }
+    }
+    
+    // end PAGE PRODUCT ;
+    
+    
+    // PAGE CATEGORY / PAGE SEARCH :
+    .page-catalog, 
+    .page-search {
+        
+        .sidebar-left,
+        .visual-type, 
+        .bts1, 
+        .compare-product a {
+             display: none;
+        }
+        
+         #Page {
+         	label {
+				display: block;
+				margin: 0 .2em 0;
+         	}
+         }
+        
+        .catalogo-form-filtros {
+            display: block;
+            
+            float: none;
+            
+            width: 100% !important;
+        }
+        
+        .breadcrumb {
+            margin: 0;
+        }
+        
+        #Page .select, #Page select {
+            width: 100%;
+            display: block;
+        }
+        
+        .catalogo-display {
+            margin: .8em .2em .7em;
+            text-align: center;
+            width: 100%;
+        }
+        
+        .catalogo-pagination .catalogo-pages, #linksPag {
+            font-size: 0;
+            width: 100%;
+            text-align: center;
+        }
+        
+    }
+    // end PAGE CATEGORY / PAGE SEARCH ;
+    
+    
+    // FINISH BUY by Logged USER :
+    .custom-nkol-central_cliente,
+    .custom-nkol-central_anteriores,
+    .custom-nkol-central_detalhe_pedido,
+    .custom-nkol-central_confirmar_pagamento,
+    .custom-nkol-central_rastrear,
+    .custom-nkol-central_troca,
+    .custom-nkol-central_senha,
+    .custom-nkol-central_comentarios,
+    .custom-nkol-central_lista_espera,
+    .custom-nkol-navegacao_visitados {
+        
+        #ProdBlock,
+        .icoPai,
+        .sidebar-left {
+            display: none;
+        }
+        
+        
+        .icoFilho {
+            border: 0;
+            width: 50%;
+        }
+        
+        .breadcrumb {
+            margin-top: 1.8rem;    
+        }
+        
+        .Mapa {
+            float: right;
+            margin: 2rem 0;
+            position: static;
+            display: none;
+        }
+        
+        .Pedidos, .tablePage {
+            
+            tr {
+                background: none;
+                display: block;
+                
+                &:first-child {
+                    display: none;   
+                }
+            }
+            
+            td {
+                border: none;
+                border-left: 1px solid #333;
+                border-right: 1px solid #333;
+                display: block;
+                padding: 0;
+                text-align: center;
+                width: 100%;
+                
+                &:first-child {
+                    border-top: 1px solid #555;
+                    margin-top: 2rem;
+                }
+                
+                &:last-child {
+                    border-bottom: 1px solid #333;
+                }
+                
+                h4 {
+                    margin: 0;
+                }
+            }
+            
+        }
+        
+        #modificar_pagamento {
+            float: right;
+            margin-top: .8rem;
+            margin-right: .8rem;
+        }
+        
+    }
+    
+    .page-central_troca {
+        
+        .tablePage tr:first-child {
+            display: block;
+        }
+        
+    }
+    // end FINISH BUY by Logged USER ;
+    
+    
+    
+    // PAGE CONTACT :
+    .page-contact{
+        
+        .Mapa{
+            display: none;
+        }
+        
+        #Page .text {
+            width: 100%;
+        }
+    }
+}
+    // end PAGE CONTACT ;
+    
+/**
+ * end pages.scss
+ */

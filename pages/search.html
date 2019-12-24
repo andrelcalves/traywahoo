@@ -1,0 +1,115 @@
+<div class="search-custom-nkol">
+    <div class="search-extra-code">
+        {% if banner.title %}
+        <div class="banner banner-title">
+            {{ banner.title }}
+        </div>
+        {% endif %}
+        <!-- pure-u-lg-12-24
+        {% if breadcrumb %}
+        <div class="vspace-sm">
+            {% element 'snippets/breadcrumb' %}
+        </div>
+        {% endif %}
+        -->
+    </div>
+    <div class="row">
+        {% if not utils.is_mobile %}
+        <div class="top-catalog">
+            <div class="row">
+                <span class="col-sm-12 col-md-4">
+                    {% element 'snippets/pagination' %}
+                </span>
+                <span class="col-sm-12 col-md-8">
+                    {% element 'snippets/filter' {
+                        'brands': category.brands
+                    } %}
+                </span>
+            </div>
+        </div>
+        {% else %}
+        <div class="top-catalog">
+            <div class="row">
+                <span class="col-sm-12">
+                    {% element 'snippets/filter' {
+                        'brands': category.brands
+                    } %}
+                </span>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+    {% if products|length > 0 %}
+    
+    <!-- FILTRO -->
+    {% if settings.exibirfiltro == "sim" %}
+    
+        <!-- filtro -->
+        {% if utils.is_mobile %}
+            {% element 'snippets/menu-filter' %}
+            <label class="dispenser-filter" for="controlTaxoFilter">
+                <i class="fa fa-filter" aria-hidden="true"></i> FILTRO
+            </label>
+        {% endif %}
+        <span class="hidden-xs hidden-sm col-md-2 filter-none-mobile">
+            {% element 'snippets/smart_filter' %}
+        </span>
+        <!-- /filtro -->
+        
+        <span class="col-sm-12 col-md-10">
+            
+            {% if not utils.is_mobile %}
+                <div class="search-word">
+                    {% if search.word %}
+                        <h1 class="titletag">Buscando por: {{ search.word }}</h1>
+                    {% endif %}
+                </div>
+                {% element 'snippets/display' {
+                    "products": products
+                } %}
+            {% else %}
+                <div class="search-word">
+                    {% if search.word %}
+                        <h1 class="titletag-mobile">Buscando por: {{ search.word }}</h1>
+                    {% endif %}
+                    <span class="numbercatg">
+                        {% element 'snippets/pagination' %}
+                    </span>
+                </div>
+                {% element 'snippets/display-2col' {
+                    "products": products
+                } %}
+            {% endif %}
+        </span>
+        
+    <!-- SEM FILTRO -->
+    {% elseif settings.exibirfiltro == "nao" %}
+        <span class="col-sm-12 col-md-12">
+            <div class="search-word">
+                {% if search.word %}
+                    <h1>Buscando por: {{ search.word }}</h1>
+                {% endif %}
+            </div>
+            {% element 'snippets/display' {
+                "products": products
+            } %}
+        </span>
+        <!-- fim filtro -->
+    {% endif %}
+    
+    <span class="col-sm-12">
+        <div class="bottom-pagination">
+            {% element 'snippets/pagination' %}
+        </div>
+    </span>
+    <div class="product-notfound">
+        {% else %}
+            <div class="search-word">
+                {% if search.word %}
+                    <h1>Buscando por: {{ search.word }}</h1>
+                {% endif %}
+            </div>
+            <p>Nenhum produto encontrado.</p>
+        {% endif %}
+    </div>
+</div>

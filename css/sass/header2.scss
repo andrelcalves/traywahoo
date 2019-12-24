@@ -1,0 +1,185 @@
+header ::-webkit-input-placeholder { color: $color-bg; }
+header :-moz-placeholder { color: $color-bg; }
+header ::-moz-placeholder { color: $color-bg; }
+header :-ms-input-placeholder { color: $color-bg; }
+
+/**
+ * header8.scss
+ */
+ 
+ .header8 {
+    margin-bottom: 2em;
+    //min-height: 100px;
+    //@include back('../img/back-layout.jpg', rgba(25, 66, 3, 1), repeat-x, 0 0);
+    //@media screen and (max-width: 90em) { background-position: center 0; }
+    
+    .banda {
+        background-color: rgba(252, 251, 253, .88); // path; background-color; repeat; position  //configuracoes
+
+        > div > div {
+            padding: .3em 0;
+            border-bottom: 1px solid #ccc
+        }
+
+        .elements-customer {
+            color: #4a4a4a;
+
+            svg {
+                position: relative;
+                top:6px;
+                fill: rgba(86, 160, 10, 1);
+                float: left;
+                margin-right: 4px;
+                width: 10px;
+                height: 12px;
+            }
+            
+            p {
+                @include font(0.9rem, 300, $main, 1.1);
+                display: inline-block;
+                vertical-align: middle;
+                color: #808080;
+                
+                a {
+                    // settings.cor
+                    @include font(0.9rem, 700, $main, 1.1);
+                }
+
+            }
+        } // end element-costumer
+        
+        .orders,
+        .account {
+            color: #808080;
+            @include font(0.9rem, 300, $main, 1.1);
+            padding-right: 20px;
+            
+            &:hover {
+                color: #bbb;
+            }
+        }
+        
+        .item-tel,
+        .item-whatsapp {
+            color: #808080;
+            margin-left: 10px;
+            @include font(0.9rem, 300, $main, 1.1);
+            
+            i {
+                font-size: 15px;
+                position: relative;
+                top: 2px;
+            }
+        }
+        .socialmedia {
+            margin-left: 5px;
+
+            .facebook i,
+            .twitter i,
+            .youtube i,
+            .instagram i,
+            .pinterest i{
+                font-size: 16px;
+                margin: 0 3px;
+            }
+        }
+        
+        // Cart :
+        .app-cart {
+            
+            .addbuy-amount {
+                background-color: $color-bg; //configuracoes
+                display: inline-block;
+                padding: 0 7px;
+                margin: 0 10px;
+                color: #fff;
+            }
+
+            .elements-cart {
+                position: relative;
+                display: inline-block;
+                padding: 0 20px;
+                margin-left: 20px;
+                border-left: 2px solid rgba(0,0,0,0.1);
+
+                a {
+                    text-decoration: none;
+                    text-align: center;
+                    position: relative;
+                    width: 100%;
+                    padding: 0;
+                    display: inline-block;
+                    
+                    .label-cart {
+                        color: #fff;
+                        background-color: transparent;
+                        @include font(1rem, 400, $main);
+
+                        .icon-cart-vector {
+                            display: inline;
+                            position: relative;
+                            top: 2px;
+                            font-size: 18px;
+    
+                            svg {
+                                width: 25px;
+                                height: 25px;
+                            }
+                        }
+                    }
+                    
+                    .title-cart {
+                        @include font(1.2rem, 400, $main);
+                        color: $color-title; //configuracoes
+                        
+                        span {
+                            color: $color-title; //configuracoes
+                        }
+                    }
+                    
+                    .addbuy-price {
+                        @include font(1rem, 400, $main);
+                        
+                        abbr {
+                            border: 0;
+                        }
+                        
+                    }
+                    
+                }
+                
+            }
+            
+        } // end Cart;
+        
+    } // end banda
+    
+    // Brand :
+        .brand {
+            @include font(1rem, 400, $main, 45px);
+            padding: 0;
+            
+            h1, h2 {
+                margin: 0;
+
+                a {
+                    display: block;
+                    line-height: 50px;
+                    height: 100%;
+                    width: 100%;
+                    
+                    svg, img {
+                        max-width: 90%;
+                        max-height: 50px;
+                    }
+                }
+            }
+        }
+        
+        // end Brand;
+        
+} // end header 
+
+/**
+ * end header8.scss
+ */

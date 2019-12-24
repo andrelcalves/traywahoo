@@ -1,0 +1,371 @@
+/**
+ * footer.scss
+ */
+ 
+footer ::-webkit-input-placeholder { color: $color-base; }
+footer :-moz-placeholder { color: $color-base; }
+footer ::-moz-placeholder { color: $color-base; }
+footer :-ms-input-placeholder { color: $color-base; }
+
+/**
+ * Footer 1
+ */
+
+.footer1 {
+    //background: url('../img/back-layout.jpg') repeat;
+    min-height: 335px;
+    margin: 0;
+    position: relative;
+    
+    background-color: $color-bg;
+    background-size: 100%;
+    clear: both;
+    
+    // Search :
+    .app-search {
+        position: relative;
+        height: 65px;
+        margin-top: 20px;
+        margin-right: 2em;
+        
+        form {
+            > * {
+                border: 0;
+            }
+            
+            fieldset { margin: 0; padding: 0; }
+            
+            input[type='search'] {
+                width: 87.5%;
+                @media screen and (max-width: 126em) { width: 80%; }
+                @media screen and (max-width: 105em) { width: 76%; }
+                @media screen and (max-width: 72em) { width: 70%; }
+                @media screen and (max-width: 48em) { width: 65%; }
+                @media screen and (max-width: 47.9em) { width: 80%; }
+                @media screen and (max-width: 36.9em) { width: 75%; }
+                @media screen and (max-width: 24.9em) { width: 70%; }
+                @media screen and (max-width: 24.9em) { width: 70%; }
+                
+                height: 59px;
+                border-radius: 6px;
+                padding: 0 .88em 0;
+                @include border(rgba(255, 255, 255, .6));
+            }
+            .search-button {
+                background: none;
+                border: none;
+                
+                width: 2.2em;
+                height: 2.2em;
+                
+                position: absolute;
+                top: 50%;
+                @include ccY();
+                right: 0;
+            }
+        }
+    }
+    
+    // end Search;
+    
+    .foot-links{
+        margin: 0 auto;
+        padding: 45px 0 26px;
+        
+        .elements-foot {
+            
+            a, p { 
+                color: #fff;
+            }
+            
+            .footer-title {
+                padding: 10px 0 5px;
+                margin-bottom: 15px;
+                border-bottom: 2px solid rgba(255,255,255,0.2);
+                font-family: 'Arial', Helvetica, sans-serif;
+                font-weight: bold;
+                color:  #fff; // settings.cor
+                font-size: 1rem;
+                font-weight: 600;
+                line-height: 1.752;
+                
+            } // } footer-title
+            
+            ul li {
+                padding: 0.4em 0;
+            }
+            
+        } // } elements-foot } 
+        
+        .elements-foot a, 
+        .elements-foot p {
+            color: #fff;
+            font-family: "Arial",Helvetica,sans-serif;
+            font-size: 1rem;
+            text-decoration: none;
+            &:hover{
+                 // color:  #56A109; // settings.cor
+            }
+        }
+    } // } foot-links
+
+    .contact {
+        > div {
+            color: #fff;
+            font: 400 1rem 'Arial', Helvetica, sans-serif;
+            margin: 0 0 12px;
+            
+            a, p {
+                color: #fff;
+                font-size: 1rem;
+                padding-left: 10px;
+            }
+        } // > div
+        
+        .ft-tel {
+            background-color: $color-base;
+            color: #fff;
+            display: inline-block;
+            padding: 10px 15px 10px 0;
+            border-radius: 5px;
+        } // } tel
+        
+        .ft-tel i{
+            font-size: 21px;
+            display: inline-block;
+            vertical-align: middle;
+            margin-left: 10px  
+        } // } ft-tel
+        
+        .ft-local i{
+            font-size: 21px;
+            display: inline-block;
+            vertical-align: middle;
+            margin-left: 10px  
+        } // } ft-local
+        
+        .ft-skype i{
+            font-size: 21px;
+            display: inline-block;
+            vertical-align: middle;
+            margin-left: 10px 
+        } // } ft-skype
+        
+        .ft-mail i{
+            font-size: 19px;
+            display: inline-block;
+            vertical-align: middle;
+            margin: 0 0 0 10px
+        } // } ft-mail
+        
+        .socialmedia {
+            margin-left: 5px;
+            
+            .twitter i,
+            .facebook i,
+            .youtube i,
+            .instagram i,
+            .pinterest i{
+                padding: 0 10px;
+                font-size: 18px;
+                display: inline-block; 
+            }
+        }
+    } // } contact
+    
+    .wr-final.wr-seals {
+        padding: 18px 0 15px;
+        margin-top: 30px;
+        background-color: #fff;
+        
+        strong {
+            display: block;
+            text-align: left;
+            letter-spacing: 0;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+    
+        
+        .ship {
+            text-align: left;
+            
+            > div {
+                display: inline-block;
+                vertical-align: middle;
+            }
+            #sedex {
+                svg {
+                    width: 70px;
+                    height: 30px;
+                }
+            }
+            #pac {
+                svg {
+                    width: 44px;
+                    height: 30px;
+                }
+            }
+            #correios {
+                svg {
+                    width: 92px;
+                    height: 22px; 
+                }
+            }
+            #transportadora {
+                svg {
+                    width: 50px;
+                    height: 29px; 
+                }
+            }
+            .img_envio {
+                
+            }
+        } // } ship
+        
+        .payment {
+            text-align: center;
+            
+            .sprite-vector-payment {
+                height: 30px;
+                margin-bottom: 10px;
+                white-space: nowrap;
+                
+                li {
+                    background-image: url('../img/payment.svg?refresh=3');
+                    background-repeat:  no-repeat;
+                    background-position: 0 0;
+                    
+                    display: inline;
+                    float: left;
+                    margin-right: 5px;
+                    margin-bottom: 5px;
+                    
+                    
+                    font-size: 0;
+                    
+                    height: 29px;
+                    width: 45px;
+                    
+                    h5 {
+                        font-size: 0;
+                    }
+                }
+                
+                li.visa {
+                    background-position: -48px 0;
+                }// } visa 
+                
+                li.master {
+                    background-position: -97px 0;
+                }// } master
+                
+                li.diners {
+                    background-position: -195px 0;
+                }// } diners
+                
+                li.elo {
+                    background-position: -244px 0;
+                }// } elo 
+                
+                li.amex {
+                    background-position: -146px 0;
+                }// } amex 
+                
+                li.aura {
+                    background-position: 0 -33px;
+                }// } aura
+                
+                li.boleto {
+                    background-position: -97px -33px;
+                }// } boleto
+                
+                li.jcb {
+                    background-position: -48px -33px;
+                }// } jcb
+                
+                li.itau {
+                    background-position: -146px -33px;
+                }// } itau 
+                
+                li.bradesco {
+                    background-position: -244px -33px;
+                }// } bradesco 
+                
+                li.bb {
+                    background-position: -195px -33px;
+                }// } bb 
+                
+                li.img_formas{
+                    background-image: none;
+                    width: auto !important;
+                }
+        
+            } // } sprite vector payment
+        } // } payment
+        
+        .security {
+            clear: left;
+            text-align: right;
+        
+            > div {
+                margin: 0 4px 0 0;
+                display: inline-block;
+                float: left;
+                position: relative;
+                top: -6px;
+            }
+            img {
+                width: auto;
+            }
+        } // } security
+    }
+} // } .footer
+
+ 
+ /**
+ * ELEMENTOS PADR�O
+ */
+ 
+ 
+ .c$color-baseits-tray {
+    background-color: #ccc;
+    margin-bottom: 10px;
+}
+
+.company {
+    background-color: #fff;
+    margin-bottom: 10px;
+
+    small {
+        font-size: 12px;
+        line-height: 0;
+        color: #a7a7a7;
+    }
+    
+    .developer svg{
+        float: right;
+    }
+}
+
+
+.logotray-message, 
+.logotray-message a {
+    letter-spacing: 0em;
+    width: 100%;
+    margin: -2px 0 0;
+} // } logotray-message 
+
+@media screen and (min-width: 769px) {
+    footer.footer {
+        a[href="#gotop"] {
+            position: absolute;
+            left: -9999em;
+            display: none;
+        }
+    }    
+}
+
+/**
+ * end footer.scss
+ */

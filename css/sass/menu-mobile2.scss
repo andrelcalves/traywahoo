@@ -1,0 +1,164 @@
+.menu-mobile2 {
+    height: 60px;
+    
+    .dispenser i{
+        cursor: pointer;
+        width: 33px;
+        margin: 10px auto;
+        display: block;
+        font-size: 33px;
+        color: $color-bg;
+        
+        &:hover {
+            section {
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+    } // dispenser
+    
+
+    section {
+        border-radius: 2px 2px 0 0;
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 272px;
+        padding: 20px;
+        
+        border-radius: 0;
+        overflow-x: auto;
+        z-index: 9999;
+        -webkit-transition: all 500ms ease;
+        transition: all 500ms ease;
+        -webkit-transform: translate(-278px);
+        -ms-transform: translate(-278px);
+        transform: translate(-278px);
+        background-color: $color-bg;
+
+    } // section
+    
+    .close-taxo {
+        background: #000;
+        opacity: 0.8;
+        
+        display: block;
+        
+        position: fixed; /* label layer */
+            right: 0;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 9999;
+            
+        -webkit-transition: all 500ms ease;
+        transition: all 500ms ease;
+        -webkit-transform: translate(100%, 0);
+        -ms-transform: translate(100%, 0);
+        transform: translate(100%, 0);
+        
+        &:before {
+            content: 'X';
+            
+                background: $color-base;
+                border-radius: 50%;
+                
+                color: #fff;
+                font: 600 18px Helvetica, Arial, sans-serif;
+                text-align: center;
+                
+                padding: 8px 7px 9px;
+                width: 38px;
+                
+                position: absolute;
+                    top: 14px;
+                    left: 280px;
+        }
+    
+    }/* } close-taxo */
+    
+    input#controlTaxo {
+        position: absolute;
+        left: -999em;
+    }
+    
+    input#controlTaxo:checked ~ section,
+    input#controlTaxo:checked ~ .close-taxo {
+        -webkit-transform: translate(0);
+        -ms-transform: translate(0);
+        transform: translate(0);
+    }
+    
+    .level1{
+        position: relative;
+        overflow: hidden;
+    }
+    
+    a{
+        color: #fff !important;
+        text-decoration: none;
+        display: block;
+        padding: 1.2em 0;
+        border-bottom: 1px solid rgba(0,0,0,0.3);
+        @include font(1rem, 400, $main);
+        text-transform: uppercase;
+    }
+        
+    .item-level1{
+        &:first-child{
+            border-top: none;
+        }
+    }
+    
+    .level1-check{
+        display: none;
+        
+        &:checked ~ .level2{
+            display: block;
+        }
+        
+        &:checked ~ .link-level1{
+            
+        }
+        
+        &:checked ~ .link-level1 .arrow-menu-mobile{
+            @include prefix('transform', 'rotate(90deg)');
+        }
+    }
+    
+    .link-level1,
+    .link-level2,
+    .link-level3{
+        color: #fff !important;
+        text-decoration: none;
+        display: block;
+        padding: 1.2em .5em;
+        border-bottom: 1px solid rgba(0,0,0,0.3);
+        @include font(1rem, 400, $main);
+        text-transform: uppercase;
+
+        &:hover{
+            text-decoration: none;
+        }
+        
+        &:active{
+            background: rgba(0,0,0,.3);
+        }
+    }
+    
+    .level2{
+        display: none;
+        margin-top: 1px;
+    }
+    
+    .link-level2{
+        background: rgba(0,0,0,.3);
+        padding-left: 15px;
+    }
+    
+    .link-level3{
+        background: rgba(0,0,0,.3);
+        padding-left: 30px;
+    }
+}

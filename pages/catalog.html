@@ -1,0 +1,101 @@
+<div class="nkol-custom-catalog">
+    <div class="search-extra-code">
+        {% if banner.title %}
+        <div class="banner banner-title">
+            {{ banner.title }}
+        </div>
+        {% endif %}
+    </div>
+    
+    {% if not utils.is_mobile %}
+    <div class="top-catalog">
+        <div class="row">
+            <span class="col-sm-12 col-md-4">
+                {% element 'snippets/pagination' %}
+            </span>
+            <span class="col-sm-12 col-md-8">
+                {% element 'snippets/filter' {
+                    'brands': category.brands
+                } %}
+            </span>
+        </div>
+    </div>
+    {% else %}
+    <div class="top-catalog">
+        <div class="row">
+            <span class="col-sm-12">
+                {% element 'snippets/filter' {
+                    'brands': category.brands
+                } %}
+            </span>
+        </div>
+    </div>
+    {% endif %}
+    <!--
+    <div class="pagination-down">
+        {% element 'snippets/pagination' %}
+    </div>
+    -->
+    {% if products|length > 0 %}
+        <!-- COM FILTRO -->
+        {% if settings.exibirfiltro == "sim" %}
+        
+            <!-- filtro -->
+            {% if utils.is_mobile %}
+                {% element 'snippets/menu-filter' %}
+                <label class="dispenser-filter" for="controlTaxoFilter">
+                    <i class="fa fa-filter" aria-hidden="true"></i> FILTRO
+                </label>
+            {% endif %}
+            <span class="hidden-xs hidden-sm col-md-2 filter-none-mobile">
+                {% element 'snippets/smart_filter' %}
+            </span>
+            <!-- /filtro -->
+            
+            <span class="col-sm-12 col-md-10">
+                <div class="row">
+                {% if not utils.is_mobile %}
+                    <h1 class="titletag">{{ category.name }}</h1>
+                    <p>{{ category.small_description }}</p>
+                    {% element 'snippets/display' {
+                        "products": products
+                    } %}
+                {% else %}
+                    <h1 class="titletag-mobile">{{ category.name }}</h1>
+                    <p>{{ category.small_description }}</p>
+                    <span class="numbercatg">
+                        {% element 'snippets/pagination' %}
+                    </span>
+                    {% element 'snippets/display-2col' {
+                        "products": products
+                    } %}
+                {% endif %}
+                </div>
+            </span>
+            <span class="col-sm-12">
+                <div class="bottom-pagination">
+                    {% element 'snippets/pagination' %}
+                </div>
+            </span>
+        <!-- SEM FILTRO -->
+        {% elseif settings.exibirfiltro == "nao" %}
+            <div class="row">
+                <span class="col-sm-12 col-md-12">
+                    <h1>{{ category.name }}</h1>
+                    <p>{{ category.small_description }}</p>
+                    {% element 'snippets/display' {
+                        "products": products
+                    } %}
+                </span>
+                <span class="col-sm-12">
+                    <div class="bottom-pagination">
+                        {% element 'snippets/pagination' %}
+                    </div>
+                </span>
+            </div>
+        {% endif %}
+    {% else %}
+        <h1>{{ category.name }}</h1>
+        <p>Nenhum produto encontrado nessa categoria.</p>
+    {% endif %}
+</div>

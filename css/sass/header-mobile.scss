@@ -1,0 +1,173 @@
+/**
+ * header-mobile.scss
+ */
+ 
+ .header-mobile-ipad {
+     display: none;    
+ }
+ 
+ .header-mobile-ipad,
+ .header-mobile {
+    height: auto; 
+    margin-bottom: 15px;
+
+    // Brand :
+    .brand {
+        @include font(0, 400, $main, 45px);
+        padding: 0;
+        margin-top: 20px;
+        margin-bottom: 10px;
+        z-index: 9999;
+        position: relative;
+        background-color: transparent;
+
+        h2 {
+            margin: 0;
+        
+            a {
+                display: block;
+                line-height: 50px;
+                height: 100%;
+                width: 100%;
+                
+                img {
+                    max-width: 250px !important;
+                    max-height: 130px !important;
+                }
+            }
+        }
+    }
+    
+    .cont-decorate {
+        padding: 0;
+        margin-top: 25px;
+
+        .top-left {
+            //.menu-mobile
+        }
+        
+        .app-search {
+            padding: 0;
+                
+            form {
+                position: relative;
+                border: 2px solid $color-bg;
+                border-radius: 0;
+                over-flow: hidden;
+                width: 100%;
+                background-color: #fff;
+
+                fieldset { 
+                    margin: 0; 
+                    padding: 0; 
+                    border: 0;
+                }
+                
+                input[type='search'] {
+                    width: 75%;
+                    height: 50px;
+                    padding: 0 .88em 0;
+                    border: 0;
+                    color: #000;
+                    background-color: #fff;
+                    font-family: $main;
+                    font-size: 12px;
+                }
+                .search-button {
+                    background-color: transparent;
+                    border: none;
+                    border-radius: 0;
+                    
+                    height: 50px;
+                    width: 50px;
+                    padding: 0.95em;
+                    
+                    position: absolute;
+                    top: 50%;
+                    right: 0;
+                    @include ccY();
+                    margin: 0;
+                    
+                    i {
+                        font-size: 25px;
+                    }
+                }
+            }
+        }
+        
+        // Cart :
+        .app-cart {
+            position: relative;
+
+            .elements-cart {
+                display: inline-block;
+                height: 50px;
+
+                a {
+                    text-decoration: none;
+                    text-align: center;
+                    width: 100%;
+                    padding: 0;
+                    display: inline-block;
+                    
+                    .label-cart {
+                        //background-color: $color-base;
+                        color: #fff;
+                        width: 25px;
+                        height: 25px;
+                        line-height: 25px;
+                        text-align: center;
+                        border-radius: 12px;
+                        display: block;
+
+                        position: absolute;
+                        top: 0;
+                        left: 50%;
+                        z-index: 2;
+                    }
+                    
+                    i {
+                        color:  $color-bg;
+                        position: absolute;
+                        top: 9px;
+                        left: 50%;
+                        margin-left: -15px;
+                        font-size: 36px;
+                    }
+                }
+                
+            }
+            
+        } // end Cart;
+        
+        // end Search;
+
+        .top-right {
+            .menu-top {
+                margin-top: 22px;
+                
+                
+            }
+        }
+    } // end cont-decorate ;
+    
+    // end Brand;
+
+    .orders,
+    .account {
+        color: #A9A9A9;
+        @include font(0.9rem, 300, $main, 1.1);
+        margin-top: 12px;
+        padding-right: 20px;
+        
+        &:hover {
+            color: #fff;
+            text-decoration: none;
+        }
+    }
+        
+} // end header;
+
+/**
+ * end header-mobile.scss
+ */

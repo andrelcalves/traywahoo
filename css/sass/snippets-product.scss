@@ -1,0 +1,405 @@
+/**
+ * item-product-3.scss
+ */
+/**
+ * Product
+ */
+.item-product-3 {
+    font-size: 16px;
+    opacity: 1;
+    text-align: center;
+    margin-bottom: 30px;
+    margin-top: 26px;
+    padding-top: 20px;
+    position: relative;
+    
+    abbr.currency[title="BRL"] {
+        border: 0;
+        font-size: 1em;
+        font-weight: 400;
+        padding: 3px 0 0; 
+        display: inline-block;
+     }
+    .price-currency-home {
+        margin-top: 10px;
+    }
+    
+    > div {
+        position: relative;
+        
+       a {
+            display: block;
+            position: relative;
+            text-decoration: none;
+            padding: 0;
+            padding-bottom: 20px;
+            
+            &:before {
+                border: 2px solid #bbb;
+                content: '';
+                
+                height: 100%;
+                width: 100%;
+                
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                
+                z-index: 10;
+                
+                opacity: 0;
+                visibility: hidden;
+                
+                transition: all .2s linear;
+            }
+            &:hover{
+                 &:before {
+                    visibility: visible;
+                    opacity: 1;
+                    background-color: rgba(255, 255, 255, 0);
+                }
+                
+                .bt-buy {
+                    display: block !important;
+                }
+            }
+                
+            .btn-buy {
+                opacity: 0;
+                visibility: hidden;
+                position: absolute;
+                top: 35%;
+                left: 50%;
+                margin-left: -40px;
+                transition: all .3s linear;
+                z-index: 20;
+            }
+            
+            &:hover {
+                .btn-buy {
+                    opacity: 1;
+                    visibility: visible;
+                }
+            }
+        }
+    }// } > div [.product > div ] 
+    
+    .second-image img {
+        opacity: 0;
+        visibility: hidden;
+    }
+        
+    &:hover {
+        .second-image img {
+            opacity: 1;
+            visibility: visible;
+            background: #fff;
+        }
+        .primary-image img {
+            opacity: 0;
+            visibility: hidden;
+        }
+    }
+    
+    .product-image2 {
+        position: relative;
+        min-height: 310px;
+        @media screen and (max-width: 620px) {
+            min-height: 185px; 
+        }
+        overflow: hidden;
+        
+        img {
+            margin: 0 auto;
+            max-height: 100%;
+            width: auto;
+            
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            @include transition();
+            @include translate(-50%, -50%);
+        }
+    }
+
+    .product-image {
+        min-height: 310px;
+        @media screen and (max-width: 620px) {
+            min-height: 185px; 
+        }
+        
+        position: relative;
+        padding: 3px;
+        margin-bottom: 5px;
+        background: #fff;
+        position: relative;
+        
+        box-shadow: inset 0px 0px 70px 4px #f9f9f9;
+        -webkit-box-shadow: inset 0px 0px 70px 4px #f9f9f9;
+        -moz-box-shadow: inset 0px 0px 70px 4px #f9f9f9;
+        -o-box-shadow: inset 0px 0px 70px 4px #f9f9f9;
+        border: 1px solid #f3f3f3;
+        
+        img {
+            margin: 0 auto;
+            max-height: 100%;
+            width: auto;
+        }
+
+        img[src*='loading'] {
+            width: 10%;
+        }
+        
+    } // } product-image
+    
+    /*
+    &:after {
+        content: '';
+        height: 2px;
+        background-color: #eee;
+        text-align: center;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+    }
+    */
+    
+    .bt-buy {
+        display: none;
+        width: 50px;
+        height: 50px;
+        line-height: 50px;
+        border-radius: 50%;
+        position: absolute;
+        bottom: -25px;
+        left: 50%;
+        text: center;
+        font-size: 22px;
+        z-index: 99;
+        -webkit-transform: translateX(-50%);
+        -moz-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+        transform: translateX(-50%);
+        @include transition();
+        
+        i {
+            position: relative;
+            left: -1px;
+            top: -2px;
+        }
+    }
+
+    .product-name {
+        color:  #8e8e8e;
+        font-family: 'Helvetica', Arial, sans-serif;
+        font-size: 1.125em;
+        font-weight: normal;
+        line-height: 50px;
+        text-align: center;
+        width: 100%;
+        
+        h3 {
+            color: black;
+            font-family: 'Helvetica', Arial, sans-serif;
+            font-weight: normal;
+            line-height: 1.3;
+            text-align: center;
+            text-transform: none;
+            margin: 15px 0 0;
+            vertical-align: middle;
+            display: inline-block;
+        }
+    } // } product-name
+    
+    .price-all {
+        text-align: center;
+        position: relative;
+          
+        .pr-without-off {
+            color:  #252525;
+            font-size: 1rem;
+            font-weight: 400;
+            margin-bottom: 0;
+            text-align: center;
+            width: 100%;
+            
+            .currency {
+                background: none;
+                font-size: 1rem;
+                font-weight: 400;
+                padding: 1px 2px 2px;
+            }
+            
+        } // } pr-without-off Price without offer pt-br['de'] -> indicate Offer
+        
+        .pr-off {
+            color: $color-title;
+            font-size: 1.5rem;
+            font-weight: 400;
+            margin-top: 0;
+            margin-bottom: 8px;
+        }
+        
+        .price-currency-home{
+            margin-bottom: 20px;
+        }
+        
+        .word-offer {
+            background: 0 0;
+            color: #252525;
+            font-size: 1rem;
+            font-weight: 400;
+            padding: 1px 2px 2px;
+        }
+        
+    }
+    
+    .installments-pr {
+        font-size: 1.1em;
+        color: #111;
+        font-weight: none;
+        text-align: center;
+        display: block;
+        margin-bottom: 10px;
+        padding: 0 20px 0;
+
+        br{
+            display: none;
+        }
+        
+        .precoAvista{
+            margin: 0;
+            color: #111;
+            text-align: center;
+            display: block;
+            position: relative;
+            z-index: 0;
+            margin: 16px 0 0;
+            padding-bottom: 8px;
+            
+            &:before {
+                content: 'R$';
+                display: inline-block;
+                vertical-align: middle;
+                
+                color: #f9f9f9;
+                font-size: 0.8rem;
+                font-weight: 400;
+                text-transform: uppercase;
+                font-family: Helvetica, sans-serif;
+                background-color: $color-bg;
+                border-radius: 50%;
+                
+                margin: -14px -25px 0 0;
+                
+                padding: 6px 6px 6px;
+                position: relative;
+                z-index: 20;
+            }
+            
+            span {
+                font-size: 2rem;
+            }
+        }
+        
+        .preco-parc2 {
+            color: #252525;
+            font-weight: none;
+        }
+        strong {
+            color: $color-base;
+        }
+        .color {
+            color: $color-title;
+        }
+    }
+    
+    // : implement label buttons information products
+    .btns-store {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        z-index: 999;
+        height: 100%;
+        
+       .type-button {
+            position: relative;
+            display: block;
+            height: 23px;
+            
+            svg {
+                display: block;
+                float: right;
+                max-width: 16px;
+                max-height: 16px;
+                position: relative;
+                top: 5px;
+                fill: #ccc !important;
+            }
+            
+            &:hover {
+                h6 {
+                    opacity: 1;
+                    visibility: visible;
+                }
+            }
+            
+            h6 {
+                position: absolute;
+                right: 0;
+                top: 0;
+                font-size: 11px;
+                background-color: rgb(139, 47, 102);
+                border-radius: 4px;
+                padding: 6px;
+                margin: 0 23px;
+                color: #fff;
+                width: 112px;
+                opacity: 0;
+                visibility: hidden;
+                //@include transition();
+            }
+        }
+        
+    }
+    // end implement label buttons information products;
+    
+    // : implement discount percent
+    .setby {
+        span {
+            background-color: #8b2f66;
+            border-radius: 50%;
+            color: #fff;
+            font-family: Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            text-align: center;
+            line-height: 53px;
+            
+            display: inline-block;
+            width: 53px;
+            height: 53px;
+            
+            position: absolute;
+            top: -18px;
+            left: 10px;
+            z-index: 111;
+        }
+    }
+    // end implement discount percent;
+    
+}// } product 
+
+
+@media screen and (max-width: 1380px) {
+    .product {
+        .installments-pr {
+            font-size: 1em;
+        }
+    }
+}/* } Viewport 640px */
+  
+/**
+ * end item-product-3.scss
+ */

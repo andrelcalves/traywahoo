@@ -1,0 +1,219 @@
+.testimony .reviews-store .slick-dots button, {
+	-webkit-transition: 150ms all linear 0s;
+	-moz-transition: 150ms all linear 0s;
+	-o-transition: 150ms all linear 0s;
+	transition: 150ms all linear 0s;
+}
+
+.testimony {
+	background: #fff;
+	display: block;
+	font-size: 0;
+	padding: 30px 0;
+	width: 100%;
+	clear: both;
+	padding: 50px 0;
+	
+	@media screen and (max-width:768px) {
+		height: auto;
+		padding: 0;
+    }
+	
+    .reviews-store {
+    	display: inline-block;
+    	vertical-align: middle;
+    	width: 100%;
+    	
+    	@media screen and (max-width:768px) {
+		width: 100%;
+		display: block;
+        }
+        
+        .title {
+        	color: #454545;
+        	display: block;
+        	font-size: 42px;
+        	font-weight: 400;
+        	margin: 0 0 23px 9px;
+        	text-transform: none;
+        }
+        
+        .dep_lista {
+            width: 100%;
+            display: inline-block;
+            text-align: center;
+
+            .dep_item {
+            	font-size: 0;
+                // min-height: 175px;
+            	display: inline-block;
+                // width: 31%;
+                // margin: 1%;
+                margin: 30px 15px;
+            }
+            
+            // slick
+            
+            /**
+             * slider.scss
+             */
+             
+            .slick-arrow {
+                background-color: transparent;
+                border: 0;
+                font-size: 0;
+                
+                width: 22px;
+                height: 22px;
+                
+                position: absolute;
+                    top: calc(50% - 11px);
+                    z-index: 999;
+                    @include ccY(-50%);
+            }
+            
+            .slick-disabled {
+                opacity: .5;
+            }
+            
+            .slick-prev {
+                left: -15px !important;
+                background-image: none !important;
+        
+                &:before{
+                    display: block;
+                    width: 100%;
+                    content: "\f053";
+                    font-family: FontAwesome;
+                    font-style: normal;
+                    font-weight: normal;
+                    text-decoration: none;
+                    color: #808080;
+                    font-size: 22px;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                }
+            }
+            .slick-next {
+                right: -15px !important;
+                background-image: none !important;
+        
+                &:before{
+                    display: block;
+                    width: 100%;
+                    content: "\f054";
+                    font-family: FontAwesome;
+                    font-style: normal;
+                    font-weight: normal;
+                    text-decoration: none;
+                    color: #808080;
+                    font-size: 22px;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                }
+            }
+            
+            .slick-slide img {
+                margin: 0 auto 0;
+            }
+            
+            /**
+             * end slider.scss
+             */
+             
+        }
+        
+        .dep_item:before {
+        	content: "";
+        	display: inline-block;
+        	vertical-align: middle;
+        }
+        
+        .dep_dados {
+        	display: inline-block;
+        	line-height: 0;
+        	margin-top: -16px;
+        	position: relative;
+        	vertical-align: middle;
+        	width: 99%;
+        	
+        	.dep_data,
+            .dep_img,
+            .dep_nota {
+            	display: none;
+            }
+            
+            .dep_nome {
+            	color: #454545;
+            	display: block;
+            	font-size: 16px;
+            	font-weight: 700;
+            	line-height: 16px;
+            	position: absolute;
+            	text-align: center;
+            	top: calc(100% + 10px);
+            	width: 100%;
+            	
+            	span {
+                	display: none;
+                }
+            }
+            
+            .dep_msg {
+            	display: inline-block;
+                width: 100%;
+                color: #444;
+                font-size: 16px;
+                text-align: center;
+                padding: 40px 20px;
+                line-height: 22px;
+                
+                background: #f9f9f9;
+                border: 1px solid #ccc;
+            	border-radius: 10px;
+            	min-height: 149px;
+            	
+            	span {
+                	display: none;
+                }
+                
+                &:before {
+                	content: "";
+                	background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iMzBweCIgaGVpZ2h0PSIzMHB4IiB2aWV3Qm94PSIwIDAgNTEyLjUgNTEyLjUiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDUxMi41IDUxMi41OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+PGc+PHBhdGggZD0iTTExMi41LDIwOC4yNWM2MS44NTYsMCwxMTIsNTAuMTQ1LDExMiwxMTJzLTUwLjE0NCwxMTItMTEyLDExMnMtMTEyLTUwLjE0NS0xMTItMTEybC0wLjUtMTYgICBjMC0xMjMuNzEyLDEwMC4yODgtMjI0LDIyNC0yMjR2NjRjLTQyLjczNywwLTgyLjkxNywxNi42NDMtMTEzLjEzNyw0Ni44NjNjLTUuODE3LDUuODE4LTExLjEyNiwxMi4wMDgtMTUuOTE1LDE4LjUxICAgQzEwMC42NjcsMjA4LjcyMywxMDYuNTI4LDIwOC4yNSwxMTIuNSwyMDguMjV6IE00MDAuNSwyMDguMjVjNjEuODU1LDAsMTEyLDUwLjE0NSwxMTIsMTEycy01MC4xNDUsMTEyLTExMiwxMTIgICBzLTExMi01MC4xNDUtMTEyLTExMmwtMC41LTE2YzAtMTIzLjcxMiwxMDAuMjg3LTIyNCwyMjQtMjI0djY0Yy00Mi43MzYsMC04Mi45MTgsMTYuNjQzLTExMy4xMzcsNDYuODYzICAgYy01LjgxOCw1LjgxOC0xMS4xMjcsMTIuMDA4LTE1LjkxNiwxOC41MUMzODguNjY2LDIwOC43MjMsMzk0LjUyNywyMDguMjUsNDAwLjUsMjA4LjI1eiIgZmlsbD0iIzQ1NDU0NSIvPjwvZz48L3N2Zz4=) center center no-repeat;
+                	background-size: 30px;
+                    width: 30px;
+                    height: 30px;
+                	display: block;
+                	position: absolute;
+                    top: -15px;
+                    left: 10px;
+                }
+            }
+        }
+        
+        .dep_link {
+        	margin: 0;
+            width: 100%;
+            clear: both;
+            margin: 10px 0 50px;
+            display: inline-block;
+        	
+        	 a {
+            	background: $color-base;
+                text-align: center;
+                background: #8aa701;
+                color: #fff;
+                font-size: .8rem;
+                padding: 10px 0;
+                margin-left: calc(50% - 105px);
+                width: 200px;
+                text-transform: uppercase;
+                display: inline-block;
+            }
+        }
+    }
+	
+}
+

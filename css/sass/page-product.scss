@@ -1,0 +1,989 @@
+/**
+ * page-product.scss
+ */
+ 
+.page-product #modal, 
+.page-product .modal-backdrop {
+    display: none !important;
+}
+ 
+ #descricao li {
+     list-style: inherit !important;
+ }
+ 
+ .product-custom-nkol {
+    font-family: Arial;
+    
+    .produto-orcamento,
+    #produto_preco {
+        display: inline-block;
+        margin: 10px 0;
+
+        .bt-orcamento,
+        span a {
+            display: inline-block;
+            margin: 10px 0;
+            padding: 10px 20px;
+            border-radius: 8px;
+            margin: 10px 0;
+        }
+    }
+    
+    .breadcrumb{
+        margin: 15px 0;
+        
+        .breadcrumb-item:last-child {
+            color: #2F2F32;
+        }
+        
+        .breadcrumb-item {
+            padding: 0 3px;
+            
+            a {
+                font-size: 15px;
+                font-family: Arial;
+                color: #a2a2a2;
+                &:hover {
+                    color: #2F2F32;
+                }
+            }
+        }
+    }
+
+    .product-geral {
+        .side-left {
+            padding: 10px;
+            
+            #visualAbas {
+                display: none;
+            }
+            
+            .gallery-img {
+                .imagem {
+                    margin-bottom: 5px;
+                    position: relative;
+                    
+                    .product-flags {
+                        position: absolute;
+                        top: 10px;
+                        right: 20px;
+                        
+                        .flag-featured,
+                        .flag-new,
+                        .flag-shipping {
+                            background-color: $color-base;
+                            color: #fff;
+                            text-align: center;
+                            padding: 5px 10px;
+                            margin: 10px 0;
+                            border-radius: 5px;
+                        }
+                    }
+                    
+                    figure {
+                        border: 2px solid #ececec;
+                        padding: 0;
+                        img {
+                            width: 100%;
+                        }
+                    }
+                }
+                .gallery-thumbs {
+                    padding: 0 20px;
+                    
+                    a {
+                        border-radius: 3px;
+                        border: 1px solid #d8d8d8;
+                        width: 70px;
+                        margin: 5px;
+                        overflow: hidden;
+                        display: inline-block;
+                        
+                        &:hover {
+                            border: 1px solid $color-base;
+                        }
+                        
+                        img {
+                            opacity: 0.8;
+                            width: 100%;
+                            height: auto;
+                            
+                            &:hover {
+                                opacity: 1;
+                            }
+                        }
+                    }
+                    
+                }
+            }
+            
+            .product-gallery {
+                
+                #colFotos{
+                    #foto_p{
+                        border: 3px solid #eee;
+                        border-bottom: 3px solid $color-base;
+                        padding: 5em 1em;
+                        background-color: #fff;
+                        
+                        #wrap{
+                            z-index: 100 !important;
+                        }
+                    }
+                    #foto_a {
+                        background-color: #fff;
+                    }
+                }
+            }
+            
+            .product-social {
+                margin: 0 auto;
+                width: 228px; 
+            }
+            
+            .product-links{
+                background-color: #eee;
+                padding: 20px 0;
+                margin-top: 15px;
+                border-radius: 3px;
+                display: inline-block;
+                width: 100%;
+                
+                .produto-recommend{
+                    a{
+                        display: block;
+                        color: #2F2F32;
+                        font-weight: normal;
+                        font-size: 12px;
+                        line-height: 15px;
+                        font-weight: bold;
+                        text-align: center;
+                        margin: 30px auto 0;
+                        padding: 0 2px;
+                        position: relative;
+                        text-decoration: none;
+    
+                        &:before{
+                            display: block;
+                            width: 100%;
+                            content: "\f0c0";
+                            font-family: FontAwesome;
+                            font-style: normal;
+                            font-weight: normal;
+                            text-decoration: inherit;
+                            color: #2F2F32;
+                            font-size: 20px;
+                            position: absolute;
+                            top: -30px;
+                            left: 0;
+                        }
+                    }
+                    
+                }
+                .produto-question {
+                    a {
+                        display: block;
+                        color: #2F2F32;
+                        font-weight: normal;
+                        font-size: 12px;
+                        line-height: 15px;
+                        font-weight: bold;
+                        text-align: center;
+                        margin-top: 20px;
+                        position: relative;
+                        margin: 30px auto 0;
+                        text-decoration: none;
+    
+                        &:before {
+                            display: block;
+                            width: 100%;
+                            content: "\f059";
+                            font-family: FontAwesome;
+                            font-style: normal;
+                            font-weight: normal;
+                            text-decoration: inherit;
+                            color: #2F2F32;
+                            font-size: 27px;
+                            position: absolute;
+                            top: -30px;
+                            left: 0;
+                        }
+                    }
+                }
+                .produto-continue-buy {
+                    a {
+                        display: block;
+                        color: #2F2F32;
+                        font-weight: normal;
+                        font-size: 12px;
+                        line-height: 15px;
+                        font-weight: bold;
+                        text-align: center;
+                        margin-top: 20px;
+                        position: relative;
+                        margin: 30px auto 0;
+                        text-decoration: none;
+    
+                        &:before {
+                            display: block;
+                            width: 100%;
+                            content: "\f07a";
+                            font-family: FontAwesome;
+                            font-style: normal;
+                            font-weight: normal;
+                            text-decoration: inherit;
+                            color: #2F2F32;
+                            font-size: 27px;
+                            position: absolute;
+                            top: -30px;
+                            left: 0;
+                        }
+                    }
+                }
+            }
+            
+        }
+        .side-right {
+            
+            h1 {
+                color: $color-title;
+                text-align: left;
+                text-transform: none;
+                font-size: 2em;
+                font-weight: 700;
+                font-family: Arial;
+                line-height: 1.5;
+                padding-bottom: 5px;
+            }
+            
+            h1:after{
+                display: none;
+            }
+            .product-line1{
+                padding: 5px;
+                
+                .product-details-info{
+                    font-size: 1em;
+                    font-weight: 300;
+                    font-family: Arial;
+                    line-height: 1.6;
+                    
+                    .additional-message {
+                        clear: both;
+                        margin: 10px 0;
+                    }
+
+                    .details-brand span,
+                    .details-model span,
+                    .details-availability span,
+                    .details-productid span{
+                        color: #a2a2a2;
+                        font-weight: 400;
+                    }
+                    
+                    .details-brand,
+                    .details-model,
+                    .details-availability,
+                    .details-productid{
+                        color: $color-base;
+                    }
+                    
+                    .texto_variacao,
+                    .varTit {
+                        padding: 10px 5px;
+                        margin: 10px 0 5px;
+                        background-color: #eee;
+                        h2 {
+                            color: #454545;
+                        }
+                        strong {
+                            color: #454545;
+                        }
+                    }
+                    
+                    // NOVO
+                    
+                    .produt-preco {
+                        
+                        #produto_preco {
+                            padding: 5px 5px 5px 0;
+                            text-align: left;
+                            position: relative;
+                            
+                            .precode {
+                                color: $color-base;
+                                font-family: Arial;
+                                font-size: 15px;
+                                text-decoration: line-through;
+                                line-height: 1.9;
+                                text-align: left;
+                
+                            } /* } pr-without-off Price without offer pt-br['de'] -> indicate Offer */
+                            
+                            .txt-por {
+                                display: none;
+                                color:  $color-base;
+                                font-size: 0.7em;
+                                font-weight: 400;
+                                line-height: 1.559;
+                                text-align: center;
+                                padding: 0;
+                             }
+                             
+                            .PrecoPrincipal {
+                                color: $color-base;
+                                font-size: 2.37rem;
+                                font-weight: 600;
+                                font-family: Arial;
+                                line-height: 1.5;
+                                padding-top: 5px;
+                                
+                                .currency {
+                                    display: inline-block;
+                                    width: 30px;
+                                    height: 30px;
+                                    margin: 0;
+                                    border: 0;
+                                    border-radius: 100%;
+                                    line-height: 30px;
+                                    text-align: center;
+                                    color: #fff;
+                                    font-size: 0.9rem;
+                                    font-weight: 400;
+                                    background-color: $color-base;
+                                    position: relative;
+                                    top: -8px;
+                                 }
+                                
+                            }
+                                
+                            .price-currency-home {
+                                margin-bottom: 20px;
+                            }
+                            
+                        } // price-all
+                        
+                        #info_preco {
+                            color: #868686;
+                            display: block;
+                            font-size: 1em;
+                            font-weight: 300;
+                            font-family: Arial;
+                            line-height: 1.6;
+                            text-align: left;
+                            
+                            clear: both;
+                            
+                            margin: 0 0 10px;
+                            padding: 0 1px 0;
+                            
+                            position: relative;
+                            
+                            br {
+                                display: none;
+                            }
+                            
+                            .precoAvista {
+                                margin: 0;
+                                color: $color-base;
+                                font-size: 1.6em !important;
+                                font-weight: 600;
+                                font-family: Arial;
+                                text-align: left;
+                                padding-top: 8px;
+                            }
+                            
+                            strong,
+                            .color {
+                                color: $color-base;
+                                font-weight: 600;
+                                font-family: Arial;
+                            }
+                        } // installments-pr
+                        
+                        #info {
+                            padding: 15px;
+                            background-color: #eee;
+                            border-radius: 2px;
+                            min-height: 60px;
+                            margin: 20px 0;
+                            
+                            a {
+                                font-family: Arial;
+                                text-transform: uppercase;
+                                font-size: .8rem;
+                                font-weight: 600;
+                                text-decoration: none;
+                                text-align: left !important;
+                                padding-left: 70px !important;
+                                display: block;
+                                position: relative;
+                                color: #454545 !important;
+                                background-color: transparent !important;
+                                
+                                &:before {
+                                    display: block;
+                                    content: "\f283";
+                                    font-family: FontAwesome;
+                                    font-style: normal;
+                                    font-weight: normal;
+                                    text-decoration: inherit;
+                                    color: #2F2F32;
+                                    font-size: 38px;
+                                    
+                                    position: absolute;
+                                    top: 12px;
+                                    left: 5px;
+                                }
+                            }
+                        }
+                    }
+
+                    .product-variants {
+                        
+                        .texto_variacao span {
+                            color: #454545;
+                            font-size: 10px;
+                            font-weight: 500;
+                            line-height: 16px;
+                        }
+                        
+                        .lista_cor_variacao li div, 
+                        .lista_cor_variacao2 li div {
+                            padding: 10px;
+                        }
+                        
+                        .lista_cor_variacao .cor_selecionada,
+                        .lista_cor_variacao2 .cor_selecionada {
+                            border: 2px solid #747474 !important;
+                        }
+                        
+                        .lista_cor_variacao li img, .lista_cor_variacao2 li img {
+                            border: 1px solid #e5e5e5 !important;
+                            width: 100%;
+                            height: auto;
+                        }
+                        
+                        .varTit {
+                            padding: 10px 0;
+                            margin: 10px 0 10px;
+                            border-bottom: 2px solid $color-base;
+                        }
+                    }
+                    
+                    .produt-quantity {
+                        font-family: Arial;
+                        height: 60px;
+                        
+                        label {
+                            color: $color-base;
+                            text-transform: uppercase;
+                            font-weight: bold;
+                            font-size: 14px;
+                            background-color: transparent;
+                            padding: 5px 15px 10px;
+                            
+                            input {
+                                    padding: 10px 15px;
+                            }
+                        }
+                        
+                        @media only screen and (max-width: 980px) {
+                        #bt_comprar {
+                            clear: both;
+                            float: left;
+                            button {
+                                height: auto;
+                            }
+                        }
+                        }
+                        
+                    }
+                    
+                    .televendas-content {
+                        background-color: $color-base;
+                        min-height: 35px;
+                        border-radius: 8px;
+                        padding: 0 10px;
+                        margin: 10px 0;
+                        text-align: center;
+                        
+                        .televendas-product {
+                            color: #000;
+                            font-size: 0.85em;
+                            font-weight: 400;
+                            font-family: $family;
+                            line-height: 2.8;
+                            
+                            svg.televendas {
+                                fill: #f1cc30;
+                                
+                                height: 14px;
+                                width: 14px;
+                                
+                                margin: 0 4px 3px;
+                                
+                                vertical-align: middle;
+                            }
+                            
+                            ul {
+                                display: inline;
+                                
+                                li {
+                                    display: inline;
+                                    margin-left: 8px;
+                                    
+                                    strong {
+                                        color: #fff;
+                                    }
+                                }
+                                
+                                li.maisestados {
+                                    color: $color-base;
+                                    padding: 4px 0 4px 11px;
+                                    border-radius: 3px;
+                                    background-color: #fff;
+                                    position: relative;
+                                    
+                                    .contato-estados {
+                                        color: $color-base;
+                                        display: inline-block;
+                                        
+                                        li {
+                                            text-align: left;
+                                            display: inline-block;
+                                            font-size: 1.05em;
+                                            line-height: 25px;
+                                            
+                                            strong {
+                                                color: $color-base;
+                                            }
+                                        }
+                                    }
+                                    
+                                    .sub-menu {
+                                        //display: none;
+                                        opacity: 0;
+                                        visibility: hidden;
+                                        
+                                        position: absolute;
+                                        top: 100%;
+                                        left: calc(-50% + -30px);;
+                                        z-index: 999;
+                                        
+                                        background-color: #fff;
+                                        border: 1px solid #c4b9ad;
+                                        border-bottom: 5px solid $color-base;
+                                        border-radius: 5px 5px 0 0;
+                                        min-width: 300px;
+                                        padding: 10px 20px;
+                                        margin-top: 20px;
+                                        text-align: left;
+                                    }
+                                    
+                                    &:hover {
+                                        .sub-menu {
+                                            //display: inline-block;
+                                            opacity: 1;
+                                            visibility: visible;
+                                        }
+                                    }
+                
+                                    &:hover {
+                                        color: #fff;
+                                        background-color: #e5ae00;
+                                        
+                                        .seta-baixo:before {
+                                          content: "";
+                                          display: inline-block;
+                                          vertical-align: middle;
+                                          margin-right: 10px;
+                                          width: 0; 
+                                          height: 0; 
+                                        
+                                          border-left: 5px solid transparent;
+                                          border-right: 5px solid transparent;
+                                          border-top: 5px solid #fff;
+                                        }
+                                    }
+                                    
+                                    .seta-baixo:before {
+                                      content: "";
+                                      display: inline-block;
+                                      vertical-align: middle;
+                                      margin-right: 10px;
+                                      width: 0; 
+                                      height: 0; 
+                                    
+                                      border-left: 5px solid transparent;
+                                      border-right: 5px solid transparent;
+                                      border-top: 5px solid $color-base;
+                                    }
+                                }
+                            }
+                            
+                            strong {
+                                color: #f1cc30;
+                                font-size: 1em;
+                                font-weight: 700;
+                                text-transform: uppercase;
+                            }
+                            b {
+                                color: #0e417a;
+                                
+                                padding: 0 2px 0;
+                            }
+                        }/* } televendas-product */
+                    
+                    }
+                    
+                    
+                } // product-details-info
+                
+                
+                .varTit{
+                    color: $color-base;
+                    border-bottom: 2px solid #eee;
+                    background-color: #fff;
+                }
+                
+                .product.quantity{
+                    
+                }
+                
+                #preco {
+                    .botao-nao_indisponivel {
+                        background: #7d8286;
+                        border: 0;
+                        color: #fff;
+                        float: left;
+                        font-size: 1rem;
+                        margin-bottom: 15px;
+                        padding: 5px 41px
+                    }
+                    #produto_nao_disp {
+                        color: #3d4443;
+                        margin: 15px 0;
+                        text-align: center;
+                        font-family: Roboto, sans-serif;
+                        font-size: 1.4rem;
+                        font-weight: 400;
+                        line-height: 2rem
+                    }
+                    #produto_nao_disp #nao_disp {
+                        clear: both;
+                        background: #f6f7f8;
+                        padding: 20px
+                    }
+                    #nao_disp label {
+                        font-size: 16px;
+                    }
+                    #produto_nao_disp input {
+                        background: #fff;
+                        border: 1px solid #bbb;
+                        height: 40px;
+                        margin: 0 5px;
+                        padding: 10px
+                    }
+                    @media screen and (max-width: 767px) {
+                        #produto_nao_disp input {
+                            width: 160px
+                        }
+                    }
+                    #letMeKnow {
+                        background: #3d4445;
+                        display: inline-block;
+                        height: 40px;
+                        width: 40px
+                    }
+                    #letMeKnow img {
+                        display: none
+                    }
+                    #letMeKnow:before {
+                        color: #fff;
+                        content: 'Ok';
+                        font-family: Roboto, sans-serif;
+                        font-size: 1rem;
+                        font-weight: 400;
+                        line-height: 40px;
+                    }
+                }
+                
+                .shipping-result {
+                    #Page {
+                        width: 100% !important;
+                    }
+                }
+                
+                .produto-calcular-frete{
+                    background-color: #eee;
+                    border-radius: 3px;
+                    min-height: 60px;
+                    margin: 20px 0;
+                    
+                    clear: both;
+                    display: inline-block;
+                    width: 100%;
+                    
+                    #cepbox{
+                        position: relative;
+                        background: none;
+                        margin: 10px 0 ;
+                        padding: 7px 0 3px 90px;
+
+                        &:before{
+                            background: none;
+                            background-color: none;
+                            display: inline-block;
+                            width: 80px;
+                            height: 30px;
+                            position: absolute;
+                            top: 25px;
+                            left: 26px;
+                            content: "\f0d1";
+                            font-family: FontAwesome;
+                            font-style: normal;
+                            font-weight: normal;
+                            text-decoration: inherit;
+                            color: #2F2F32;
+                            font-size: 42px;
+                        }
+                        
+                        label{
+                        font-size: 15px;  
+                        }
+                        
+                        h6{
+                            display: none;
+                        }
+                        
+                        input{
+                            height: 30px;
+                            background-color: #ccc;
+                        }
+                        
+                        input#cep1{
+                            color: #000000;
+                            font-size: 14px;
+                            border-radius: 2px;
+                            border: 1px solid #C4BEA8;
+                            padding: 0;
+                            text-align: center;
+                            height: 42px;
+                            line-height: 25px;
+                            margin: 3px;
+                            background-color: #fff;
+                            box-sizing: border-box;
+                            width: 30%;
+                        }
+                        
+                        input#cep2{
+                            color: #000000;
+                            font-size: 14px;
+                            border-radius: 2px;
+                            border: 1px solid #C4BEA8;
+                            padding: 0;
+                            text-align: center;
+                            height: 42px;
+                            line-height: 25px;
+                            margin: 3px;
+                            background-color: #fff;
+                            box-sizing: border-box;
+                            width: 20%;
+                        }
+                        
+                        a.botao-simular-frete{
+                            color: #fff;
+                            text-align: center;
+                            border: 0;
+                            border-radius: 2.5px;
+                            
+                            /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#b9608b+0,a4547b+100 */
+                            background: $color-base;
+                            position: static;
+                            margin: 3px;
+                            padding: 10px 30px;
+                            
+                            &:hover {
+                                background-color: #e5ae00;
+                            }
+                        }
+                    }
+                }
+                
+                @media only screen and (max-width: 1024px) {
+                    
+                    //.helper-shipping{
+                    //    display: none;
+                    //}
+                    
+                }
+                
+            }
+        }
+         @media screen and (max-width: 48em) {
+             .side-right{
+                padding: 0 10px;
+            }
+         }
+    }
+}
+
+.slider-for.slick-slider {
+    
+}
+.slider-nav {
+    img {
+        height: 128px;
+        width: 108px;
+    }
+}
+
+.related-title {
+    background-color: $color-bg;
+    display: block;
+    padding: 10px 10px;
+    margin: 15px 0;
+    text-align: center;
+    color: #fff;
+    border-bottom: 3px solid $color-base;
+    border-radius: 4px 4px 0 0;
+}
+
+
+/**
+ * Compre Junto
+ */
+
+.compreJunto{
+    letter-spacing: 0 !important;
+    width: 100%;
+    
+    @media screen and (max-width: 768px) {
+    .fotosCompreJunto{
+        width: 100% !important;
+    }
+    }
+    
+    .produto{
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+        
+        box-shadow: inset 0px 0px 70px 4px #efefef;
+        -webkit-box-shadow: inset 0px 0px 70px 4px #efefef;
+        -moz-box-shadow: inset 0px 0px 70px 4px #efefef;
+        -o-box-shadow: inset 0px 0px 70px 4px #efefef;
+    
+    }
+    
+    div.plus{
+        font-size: 20px;
+        line-height: 30px;
+        width: 35px !important;
+        height: 35px !important;
+        color: #fff;
+        background-color: #01c5b5;
+        border-radius: 100%;
+        margin: -10px;
+        position: relative;
+        z-index: 2;
+    }
+    
+    .cpClear{
+        display: none;
+    }
+    
+    .precoCompreJunto{
+        border: 0;
+        height: auto;
+        
+        @media screen and (max-width: 1024px) {
+            width: 100% !important;
+        }
+        
+        strong{
+            font-size: 18px;
+            color: #000;
+            
+            .unidades_valor,
+            .unidades_separador{
+                font-size: 18px !important;
+                color: #000;
+            }
+        }
+        
+        a,
+        span,
+        .comprejuto_preco,
+        .comprejunto_economize{
+            font-size: 12px;
+            color: #787878;
+            text-transform: none !important;
+            text-align: left;
+        }
+        
+        .comprejunto_preco2{
+            font-size: 18px;
+            text-transform: none !important;
+            text-align: left;
+            
+            strong{
+                color: #68b257;
+                margin: 2px 0 5px;
+                display: inline-block;
+            }
+        }
+        
+        .comprejunto_botao{
+            margin: 15px 0;
+            display: inline-block;
+            
+            button{
+                color: #fff;
+                float: left;
+                padding: 10px 25px;
+                
+                span{
+                    color: #fff;
+                }
+                
+                span.botao-commerce-img{
+                    background-image: none;
+                    padding: 0;
+                }
+            }
+        }
+    }
+} // bundle
+
+.modal-video-nkol {
+    .window{
+        display:none;
+        width:300px;
+        height:300px;
+        position:absolute;
+        left:0;
+        top:0;
+        background:#FFF;
+        z-index:9900;
+        padding:10px;
+        border-radius:10px;
+    }
+     
+    #mascara{
+        display:none;
+        position:absolute;
+        left:0;
+        top:0;
+        z-index:9000;
+        background-color:#000;
+    }
+     
+    .fechar {
+        display:block; text-align:right;
+    }
+}
+
+/**
+ * end page-product.scss
+ */

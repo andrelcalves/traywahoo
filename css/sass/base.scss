@@ -1,0 +1,564 @@
+/**
+ * base.scss
+ */
+
+.bg_fundo_loja {
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    display: inline-block;
+    
+    img {
+        width: 100%;
+    }
+}
+
+body, 
+.color, 
+.color a, 
+td, 
+p {
+    font-family: $main !important;
+}
+
+a,
+a:hover,
+a:link, 
+a:visited {
+    color: $color-base;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: $main;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+/**
+ * Base / Settings
+ */
+
+ //cor botoões
+ #nao_disp a,
+ #produto_preco span a,
+.botao-calcular-frete, 
+.botao-calcular-frete:hover, 
+.botao-cupom-desconto, 
+.botao-cupom-desconto:hover, 
+.botao-efetuar-login, 
+.botao-efetuar-login:hover, 
+.botao-enviar-cadastro, 
+.botao-enviar-cadastro:hover, 
+.botao-enviar-cartao, 
+.botao-enviar-cartao:hover, 
+.botao-finalizar-compra, 
+.botao-finalizar-compra:hover, 
+.botao-novo-cadastro, 
+.botao-novo-cadastro:hover, 
+.botao-prosseguir-cadastro, 
+.botao-prosseguir-cadastro:hover, 
+.botao-prosseguir-compra, 
+.botao-prosseguir-compra:hover, 
+.botao-salvar-lista, 
+.botao-salvar-lista:hover, 
+.botao-simular-frete, 
+.botao-simular-frete:hover, 
+a.botao-calcular-frete, 
+a.botao-cupom-desconto, 
+a.botao-efetuar-login, 
+a.botao-enviar-cadastro, 
+a.botao-enviar-cartao, 
+a.botao-finalizar-compra, 
+a.botao-novo-cadastro, 
+a.botao-prosseguir-cadastro, 
+a.botao-prosseguir-compra, 
+a.botao-salvar-lista, 
+a.botao-simular-frete {
+    background-image: none !important;
+    border: 0 !important;
+    color: #fff !important;
+    
+    a {
+        color: #fff !important;
+    }
+    
+    &:hover {
+        background: #b7d238 !important;
+    }
+}
+
+.botao-prosseguir-cadastro, 
+.botao-prosseguir-compra {
+    margin-bottom: 20px;
+}
+
+
+.botao-continuar-comprando, 
+.botao-continuar-comprando:hover, 
+.botao-sob-consulta, 
+.botao-sob-consulta:hover {
+    background: #7d8286 !important;
+    background-image: none !important;
+    border: 0 !important;
+    color: #fff !important;
+    padding: 5px 10px 5px 5px;
+    
+    a {
+        color: #fff !important;
+    }
+}
+ 
+.product-image img[src*=loading] {
+    width: 180px !important;
+    margin: 0 auto;
+}
+
+.lazy[src*=loading] {
+    padding: 0;
+    width: 180px !important;
+    margin: 0 auto;
+}
+ 
+.customSelect,
+.select {
+/* Styles For Your Select Box */
+font-size: 12px;
+background-color: #fff;
+color: #7c7c7c;
+padding: 10px 8px;
+border: 1px solid $color-gray;
+-moz-border-radius: 5px;
+-webkit-border-radius: 5px;
+border-radius: 5px 5px;
+}
+.customSelect.changed {
+/* You can use this if you want a different style after user has made a selection */
+}
+.customSelectFocus {
+/* You can use this if you want a different style after user has made a selection */
+}
+.customSelectOpen {
+/* You can use this if you want a different style after user has made a selection */
+}
+
+/* We can style the inner box, too */
+.customSelectInner {
+background:url("../img/customSelect-arrow.gif") no-repeat center right;
+}
+
+// ABAS  DEFAULT  //  CORRIGI O PROBLEMA DO SITEMA N�O CARREGAR O ESTILO DAS ABAS DA PAGINA DE PRODUTO
+
+
+#form_pagamento .active h2.passo-text {
+    color: #fff !important;
+}
+
+#relacionados,
+#CadastroAbas, 
+#ProdAbas {
+    border-bottom: 4px solid $color-base;
+    display: block;
+    font-size: 0;
+    margin: 15px 0 23px 0;
+    padding: 0 0 0 8px;
+}
+
+#relacionados a {
+    padding-top: 8px !important;
+}
+
+
+#relacionados.aberta a h6,
+#CadastroAbas .aberta a, 
+#ProdAbas .aberta a {
+    background: $color-bg;
+    color: #fff !important;
+}
+
+#CadastroAbas a:hover, 
+#ProdAbas a:hover,
+#CadastroAbas .aberta a:hover, 
+#ProdAbas .aberta a:hover {
+    background-color: $color-bg ;
+    color: #fff !important;
+}
+
+#CadastroAbas li a, 
+#ProdAbas li a, 
+#CadastroAbas .aberta a, 
+#ProdAbas .aberta a {
+    background-color: #fff;
+    border-left: 1px solid $color-gray;
+    border-right: 1px solid $color-gray;
+    border-top: 1px solid $color-gray;
+    border-radius: 8px 8px 0 0;
+    color: $color-bg;
+    display: block;
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 0;
+    margin: 0 0 -1px 0;
+    padding: 5px 15px;
+    text-transform: uppercase;
+    margin-bottom: 0;
+}
+
+#ProdBlock {
+    .board {
+        padding: 25px 0;
+    }
+}
+
+.container-abas .board{
+    padding: 2em;
+}
+
+a#linkPagParcelado{
+    text-decoration: none !important;
+    color: $color-bg !important;
+}
+
+.breadcrumb {
+    margin-top: 30px;
+    
+    .breadcrumb-item a {
+        font-family: $main !important;
+    }
+}
+
+
+/**
+ * ASSINATURA LAYERS
+ */
+ 
+#assinatura-layers {
+    margin: 15px 0;
+    
+    .info-rodape-cliente {
+        display: inline-block;
+        text-align: left;
+        width: 100%;
+        color: #A6A6A6;
+        font: 12px;
+    }
+    .logo-layers {
+        display: inline-block;
+        text-align: right;
+        width: 100%;
+    }
+}
+
+// RETIRA LINHA PONTILHADA DO R$
+
+abbr[title] {
+    border-bottom: 0 !important;
+}
+
+// CORRIGI SCROLL HORIZONTAL
+
+.timelogotray {
+    display: none;
+}
+
+ // SOBREPOR TOPO FLUTUANTE
+.modal {
+    z-index: 99999 !important;
+}
+
+.modal > .modal-dialog {
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+
+/**
+ * Base / Settings
+ */
+ 
+ // Setting Boxsize
+html {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    -webkit-box-sizing: inherit;
+    -moz-box-sizing: inherit;
+    box-sizing: inherit;
+}
+
+html, body {
+    font-size: 16px;
+}
+
+:focus, :hover, :active {
+    outline: none;
+}
+
+body {
+    // background: url('../img/back-layout.jpg') repeat-x; // 
+}
+
+.container-extra-nkol{
+    width: 100%;
+}
+
+.page-content{
+    padding-left: 15px;
+}
+
+// resize wrapper and centralization : 
+
+.res {
+    width: 88.9%;
+} // 1680 ~ 1919
+
+.cc {
+    margin: 0 auto 0;
+}
+
+.res-cc {
+    width: 88.9%;
+    margin: 0 auto 0;
+} // 1680 ~ 1919
+
+// resize wrapper and centralization end
+
+// adaptive images
+img {
+    height: auto;
+    max-width: 100%;
+}
+
+// Slider Slick
+.slick-slider {
+    border: 0; outline: 0;
+    &:focus, &:hover, &:active {
+        border: 0; outline: 0;
+        a {
+            border: 0; outline: 0;
+        }
+    }
+    a {
+        border: 0; outline: 0;
+    }
+}
+
+// align
+.c-left {
+    text-align: left;
+}
+
+.c-center {
+    text-align: center;
+}
+
+.c-right {
+    text-align: right;
+}
+
+
+.addCartModal.active {
+    top: 10px;
+}
+.addCartModal {
+    background: #333;
+    border-radius: 10px;
+    
+    width: 300px;
+    height: 70px;
+    
+    text-align: center;
+    
+    position: fixed;
+    top: -90px;
+    left: 50%;
+        @include ccX();
+    
+    z-index: 99999;
+        
+    
+}
+.addCartModal .text {
+    color: #333;
+    
+    font-size: 19px;
+}
+
+.modal-error.active {
+    top: 10px;
+}
+.modal-error {
+    background: #ff0000;
+    border-radius: 10px;
+    
+    width: 300px;
+    height: 70px;
+    
+    text-align: center;
+    
+    position: fixed;
+    top: -90px;
+    left: 50%;
+        @include ccX();
+    
+    z-index: 99999;
+        
+    
+}
+.modal-error .text {
+    color: #000;
+    
+    font-size: 19px;
+}
+
+// Each Product
+
+.add-for-cash {
+    text-align: center;
+    opacity: 0;
+    visibility: hidden;
+    
+    .cont-qtd {
+        
+        position: relative;
+        
+        width: 38%;
+        height: 31px;
+        
+        display: inline-block;
+        
+        .add2_minus {
+            background: none;
+            border: 1px solid #333;
+            border-right: 0;
+            border-radius: 16px 0 0 16px;
+            
+            cursor: pointer;
+            font-size: 0;
+            
+            width: 31px;
+            @media screen and (min-width: 2560px) { width: 33px; }
+            
+            height: 31px;
+            
+            margin: 0;
+            padding-top: 4px;
+            
+            position: absolute;
+            bottom: 0;
+            left: 3%;
+            
+            z-index: 10;
+             
+            &:before {
+                content: '';
+                position: absolute;
+                top: calc(50% - .75px);
+                left: calc(50% - 14%);
+                
+                height: 1.77px;
+                width: 28%;
+                
+                
+                background-color: #fff;
+            }
+            
+        } // decrease
+        
+        .add2_plus {
+            background: none;
+            border: 1px solid #000;
+            border-left: 0;
+            border-radius: 0 16px 16px 0;
+            
+            cursor: pointer;
+            font-size: 0;
+            
+            margin: 0;
+            padding-top: 4px;
+            
+            width: 31px;
+            @media screen and (min-width: 2560px) { width: 33px; }
+            
+            height: 31px;
+            
+            position: absolute;                                        
+            
+            bottom: 0;
+            right: 3%;
+                @media screen and (min-width: 105em) and (max-width: 106em) { right: 4.8%; }
+                @media screen and (min-width: 105em) and (min-width: 125em) { right: 19%;  }
+                
+            
+            z-index: 10;
+            
+            &:before {
+                $path: 'data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB2aWV3Qm94PSIxMyA5OSA1NzguNSA1NzguNSIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAxMyA5OSA1NzguNSA1NzguNSIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+PHBvbHlnb24gZmlsbD0iIzdFQ0I5OSIgc3Ryb2tlPSIjN0VDQjk5IiBzdHJva2Utd2lkdGg9IjIwIiBzdHJva2UtbWl0ZXJsaW1pdD0iMTAiIHBvaW50cz0iNTg1LjUsMzU2Ljc3OCAzMzMuNzIzLDM1Ni43NzggMzMzLjcyMywxMDUgMjcwLjc3OCwxMDUgMjcwLjc3OCwzNTYuNzc4IDE5LDM1Ni43NzggMTksNDE5LjcyMyAyNzAuNzc4LDQxOS43MjMgMjcwLjc3OCw2NzEuNSAzMzMuNzIzLDY3MS41IDMzMy43MjMsNDE5LjcyMyA1ODUuNSw0MTkuNzIzICIvPjwvc3ZnPg==';
+                
+                content: url($path);
+                position: absolute;
+                top: calc(50% - 5.5px);
+                left: calc(50% - 5.5px);
+                
+                
+                width: 11px;
+                height: 11px;
+            }
+            
+        } // increase
+        
+    } // cont-qtd
+    
+    .info-value,
+    input[type='number'] {
+        background-color: #444;
+        border: 1px solid #333;
+        border-left: 0;
+        border-right: 0;
+        
+        color: #333;
+        
+        text-align: right;
+        font-size: 15px;
+        
+        height: 31px;
+        width: 36%;
+        
+        position: absolute;
+        left: 34px;
+        bottom: 0;
+        
+        @media screen and (min-width: 125em) { 
+            text-align: center;
+            padding-left: 13px;
+        }
+    }
+    
+    button.add2_addCart {
+        background-color: #333;
+        border: 0;
+        border-radius: 50px;
+        
+        color: #fff;
+        
+        font-size: 14px;
+        display: inline-block;
+        vertical-align: top;
+        text-transform: capitalize;
+        
+        margin-left: 14px;
+        
+        width: 50%;
+        height: 31px;
+    }
+}
+
+/**
+ * end base.scss
+ */

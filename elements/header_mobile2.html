@@ -1,0 +1,61 @@
+<div class="cont-decorate">
+    <div class="container-custom">
+        <div class="col-xs-2 c-left">
+            <div class="top-left">
+                {% element 'snippets/menu-mobile2' %}
+            </div> 
+        </div> 
+        
+        <div class="col-xs-8 c-center">
+            <div class="row">
+                <div class="brand">
+                    <div class="col-sm-12 c-center">
+                        <a data-tray-tst="logotipo_loja" href="{{ links.home }}" title="{{ store.name }}" class="logo-color">
+                            {{ Image('logo') }}
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-xs-2 c-right">
+            <div class="app-cart">
+                <div>
+                    <div class="elements-cart">
+                        <a href="{{ links.cart }}">
+                            <span class="label-cart">
+                                <div class="icon-cart-vector">
+                                    <span data-cart="amount" class="addbuy-amount">{{ cart.amount }}</span>
+                                </div>
+                            </span>
+                            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                        </a><!--/ link.cart -->
+                    </div> <!--/ elements-cart -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="col-xs-12 c-center">
+    <div class="app-search">
+        <form role="form" action="{{ links.search }}">
+            <fieldset>
+                <input type="hidden" name="loja" value="{{ store.id }}">
+                
+                <input type="search" placeholder="Digite o que procura?" name="palavra_busca">
+           
+                <button class="search-button">
+                    <svg width="17px" height="17px" viewBox="0 0 18 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;">
+                        <g transform="matrix(1,0,0,1,-486.72,-39.5866)">
+                            <g id="Search" transform="matrix(0.0685713,0,0,0.0685713,486.72,39.5866)">
+                                <path d="M244.186,214.604L189.807,160.226C189.518,159.937 189.179,159.735 188.877,159.466C199.577,143.235 205.822,123.806 205.822,102.912C205.822,46.075 159.747,0 102.911,0C46.075,0 0,46.075 0,102.911C0,159.746 46.074,205.822 102.91,205.822C123.805,205.822 143.233,199.577 159.464,188.877C159.733,189.178 159.934,189.517 160.223,189.806L214.603,244.186C222.772,252.354 236.016,252.354 244.186,244.186C252.354,236.017 252.354,222.773 244.186,214.604ZM102.911,170.146C65.777,170.146 35.675,140.044 35.675,102.911C35.675,65.777 65.778,35.675 102.911,35.675C140.043,35.675 170.146,65.778 170.146,102.911C170.146,140.044 140.043,170.146 102.911,170.146Z" style="fill:#000;"/>
+                            </g>
+                        </g>
+                    </svg>
+                </button>
+                
+            </fieldset>
+        </form>
+    </div>
+</div>

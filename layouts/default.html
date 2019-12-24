@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="pt-br" data-theme="{{ settings.extension_id }}" data-store="{{ store.id }}" class="page-{{ pages.current }}">
+<head>
+    <!-- tray charset -->
+    {{ html.charset() }}
+    <meta http-equiv="X-UA-Compatible" content="IE=11">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- tray meta tags -->
+    {{ tray.meta }}
+    
+    <!-- tray styles -->
+    {{ tray.styles }}
+    <link href="//images.tcdn.com.br/img/arquivos/identidade_visual/css/sistema.css?{{ utils.assets_version }}" rel="stylesheet">
+
+    <!-- styles -->
+    <link rel="stylesheet" href="{{ asset('css/theme.min.css') }}" type="text/css">
+    
+    <!-- CSS DYNAMIC-->
+    <link rel="stylesheet" href="{{ asset('css/configuracoes.css', {dynamic: true} ) }}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('css/custom.css', {dynamic: true}) }}" type="text/css">
+
+    <style>{{ settings.custom_css }}</style>
+    
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="{{ asset('css/bootstrap/bootstrap.min.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('css/fontawesome/fontawesome.min.css') }}" type="text/css">
+
+    <!-- Install Fonts Google -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    
+    <!-- tray scripts -->
+    {{ tray.scripts }}
+    
+    <!-- tray analytics -->
+    {{ tray.analytics }}
+    
+    <!-- google tag manager -->
+    {{ googleTagManager.header(pages.current, tagManagerData) }}
+    
+    <!-- Plugin Facebook Footer -->
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v2.4";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+    
+</head>
+
+<body class="custom-nkol-{{ pages.current }}">
+    
+    {{ googleTagManager.top(pages.current, tagManagerData) }}
+    
+    <!-- MENSAGEM TOPO -->
+    {% if pages.current != 'checkout_cart' and utils.is_mobile %}
+        <div class="color-detail-bg mensagem-topo">
+            <p>{{ Translation('ag_msn') }}</p>
+        </div>
+    {% endif %}
+
+    <!-- HEADER -->
+    <header class="header-mobile-ipad clearfix">
+        {% element 'header_mobile2' %}
+    </header>
+    {% if not utils.is_mobile %}
+        {% if settings.structure_header == "header1" %}
+            {% element 'header1' %}
+        {% elseif settings.structure_header == "header2" %}
+            {% element 'header2' %}
+        {% elseif settings.structure_header == "header3" %}
+            {% element 'header3' %}
+        {% endif %}
+    {% else %}
+        <header class="header-mobile clearfix">
+            {% element 'header_mobile2' %}
+        </header>
+    {% endif %}
+    
+    <!--HEADER FIXED-->
+    {% if not utils.is_mobile %}
+        {% element 'header-fixed' %}
+    {% endif %}
+
+    <!--CONTEUDO-->
+    {% if pages.current == 'home' %}
+        <!-- HOME -->
+        <div class="container-full">
+            {% if "central" in pages.current %}
+                {%  element 'sidebar-central' %}
+            {% endif %}
+            <section class="page-content col-sm-12 {{ 'central' in pages.current ? 'col-sm-9' : '' }}">
+                <div class="row">
+                    {{ content_for_layout }}
+                </div>
+            </section>
+        </div>
+    {% else %}
+        <div class="container-custom">
+            {% if "central" in pages.current %}
+                {%  element 'sidebar-central' %}
+            {% endif %}
+            <section class="page-content col-sm-12 {{ 'central' in pages.current ? 'col-sm-9' : '' }}">
+                <div class="row">
+                    {{ content_for_layout }}
+                </div>
+            </section>
+        </div>
+    {% endif %}
+
+    {# {% element 'snippets/tagcloud' %} #}
+    
+    {% if pages.current in ['product','catalog','search'] %}
+        {% element 'snippets/produtcs-visited' %} 
+    {% endif %}
+    
+    {% element 'footer' %}
+
+    {% if pages.current == 'home' %}
+        {{ banner.popup ~ banner.floating }}
+    {% endif %}
+    
+    <div class="container-custom">
+        <div class="credits-tray">
+            <!--
+            {% element 'snippets/credits' %}
+            -->
+        </div>
+    </div>
+    
+    <div id="assinatura-layers">
+        <div class="container-custom">
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="info-rodape-cliente">{{ Translation('ag_mensagem_rodape') }}</p>
+                </div>
+                <div class="col-md-6">
+                    <div class="logo-layers">
+                        <!--
+                        <a href="http://www.layerscommerce.com.br" target="_blank" title="Layers Commerce">
+                            <img src="{{ themePath }}img/assinatura-layerscommerce2.svg" alt="Layers Commerce" title="Layers Commerce" /></img>
+                        </a>
+                        -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- tray -->
+    {% element 'snippets/modal' %}
+    {{ googleTagManager.bottom(pages.current, tagManagerData) }}
+    {{ html.script('dist/application.min.js?' ~ utils.assets_version) }}
+    {% element 'snippets/pageview' %}
+    {{ store.chat }}
+    
+    <!-- theme scripts-->
+    <script type="text/javascript" src="{{ asset('js/theme.min.js') }}"></script>
+    
+</body>
+</html>

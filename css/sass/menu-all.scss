@@ -1,0 +1,72 @@
+/**
+ * menu-1all.scss
+ */
+ 
+ .dispenser {
+    
+    section {
+        border: 2px solid $color-bg; //configuracoes
+        width: calc(100% + 1.9px);
+        
+        position: absolute;
+        top: 100%;
+        z-index: 9999;
+        
+        opacity: 0;
+        visibility: hidden;
+        
+        background-color: #fff;
+        @include transition();
+        
+        .item-menu {
+            padding: 0 10px 20px 20px;
+            display: inline-block;
+            vertical-align: top;
+            width: 16.2%; 
+            @media screen and (max-width: 55em) { white-space: normal; 
+            }
+            
+            &:last-child {
+                a {
+                    &:after {
+                        display: none;
+                    }
+                }
+            }
+            
+            .option-allmenu {
+                color: $color-title;  //configuracoes  //configuracoes
+                text-decoration: none;
+                @include font(.7rem, 700, $main);
+                border-bottom: 2px solid #eee;
+                padding: 10px 0 5px;
+                margin-bottom: 5px;
+            }
+            
+            a {
+                color: $color-title;  //configuracoes
+                text-decoration: none;
+                @include font(1rem, 700, $main);
+                display: block;
+                text-transform: none;
+                position: relative;
+            }
+            
+            .menu-sub {
+                white-space: normal;
+                padding: 0;
+                
+                a {
+                    color: #8a8a8a;
+                    font-weight: 400;
+                    line-height: 1.5em;
+                }
+            } // menu-sub
+            
+        } // item-menu
+    } // section
+} // dispenser
+
+/**
+ * end menu-1all.scss
+ */

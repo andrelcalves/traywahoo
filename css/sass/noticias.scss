@@ -1,0 +1,186 @@
+
+.news-home {
+    background: #f9f9f9;
+	display: block;
+	padding: 50px 0 40px;
+	clear: both;
+	
+    @media screen and (max-width:768px) {
+    	display: none;
+    	padding: 10px;
+    }
+    
+    .bt-news {
+    	color: #fff;
+    	display: inline-block;
+    	float: right;
+    	font-size: 12px;
+    	font-weight: 400;
+    	line-height: 14px;
+    	margin-top: 20px;
+    	padding: 10px 15px;
+    	border-radius: 4px;
+    	text-align: right;
+    	text-decoration: none;
+    }
+    
+    .bt-noticias {
+        margin: 0;
+        width: 100%;
+        clear: both;
+        margin: 10px 0 50px;
+        display: inline-block;
+        
+        a {
+            background: $color-base;
+            text-align: center;
+            background: #8aa701;
+            color: #fff;
+            font-size: .8rem;
+            padding: 10px 0;
+            margin-left: calc(50% - 105px);
+            width: 200px;
+            text-transform: uppercase;
+            display: inline-block;
+        }
+    }
+    
+    .news-button {
+        background: $primary-color;
+        color: #fff;
+        font: 300 1em $primary-font;
+        text-transform: uppercase;
+    
+        &:hover {
+            background: #000;
+            color: #fff;
+        }
+    }
+
+    
+    .noticias {
+        
+        li:nth-child(n+4) {
+            display: none;
+        }
+        
+        li {
+            border-radius: 5px;
+        	border: none;
+        	display: inline-block;
+        	float: none;
+        	height: auto;
+        	margin: 0;
+        	padding: 0 50px;
+        	vertical-align: top;
+        	width: 33%;
+            
+            @media screen and (max-width:768px) {
+            	margin: 0 auto 20px;
+            	width: 100%;
+            }
+
+            p {
+            	color: #838791;
+            	display: none;
+            	font: 300 13px/15px;
+            	text-align: justify;
+            }
+            
+            h3 {
+            	color: #ccc;
+            	font-weight: 300;
+            	font-size: 12px;
+            	line-height: 14px;
+            	margin: 15px 0;
+            	position: relative;
+            	text-align: center;
+            	text-transform: uppercase;
+            	
+            	a {
+                	color: #555;
+                	display: block;
+                	font-weight: 300;
+                	font-size: 16px;
+                	line-height: 18px;
+                	margin: 15px 0;
+                	text-align: center;
+                	text-transform: none;
+                }
+                
+                a:after {
+                	border-radius: 5px;
+                	border: 1px solid #000;
+                	color: #000;
+                	content: "Ver mais";
+                	display: block;
+                	font-size: 11px;
+                	font-weight: 300;
+                	line-height: 14px;
+                	margin: 15px auto 0;
+                	padding: 5px 0;
+                	text-transform: uppercase;
+                	width: 75px;
+                }
+            }
+            
+            h3:before {
+            	background: #f5f5f5;
+            	content: '';
+            	height: 10px;
+            	left: 61%;
+            	position: absolute;
+            	top: 2px;
+            	width: 10px;
+            }
+        }
+        
+        #noticia_imagem {
+            margin: 10px 0;
+            height: auto;
+        	width: 100%;
+        	float: left;
+
+        	a {
+        	    background: #fff;
+        	    border-radius: 5px;
+        	    border: 1px solid #ccc;
+            	margin: 0;
+            	padding: 10px;
+            	display: block;
+            	line-height: 0;
+            	min-height: 225px;
+            	
+            	@media screen and (max-width: 1140px) {
+                min-height: auto;
+                }
+
+            	img {
+                    width: auto;
+                    min-height: 100%;
+                }
+                
+                @media screen and (max-width: 1140px) {
+                max-width: 100%;
+                }
+            }
+            
+        }
+        
+        #noticia_dados {
+        	margin-left: 0;
+        	width: 100%;
+        	float: left;
+        }
+    
+    }  
+} 
+
+.noticias #noticia_imagem img {
+    width: auto;
+    max-width: inherit;
+    
+    @media screen and (max-width: 1140px) {
+    max-width: 100%;
+    }
+}

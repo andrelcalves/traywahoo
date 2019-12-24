@@ -1,0 +1,93 @@
+
+ /**
+ * Newsletter 5
+ */
+ 
+  .newsletter5 {
+    
+    .news-button {
+        background: $color-base;
+        color: #fff;
+        font: 300 1em $main;
+        text-transform: uppercase;
+    
+        &:hover {
+            background: $color-base;
+            color: #fff;
+        }
+    }
+    
+    .news {
+        background: #fff;
+        border-top: 2px solid rgba(212, 212, 212, 1);
+        
+        min-height: 125px;
+        
+        @media screen and (max-width: 28em) { display: none !important; }
+        
+        .news-text {
+            position: relative;
+            @media screen and (max-width: 47.9375em) { display: none; }
+            
+            > * {
+                display: table;
+                min-height: 125px;
+                
+                max-width: 76%;
+                    p {
+                        color: rgba(38, 38, 38, 1);
+                        @include font (1.1rem, 400, $main, 1.5);
+                        
+                        display: table-cell;
+                            vertical-align: middle;
+                    }
+            }
+        }
+        .news-form{
+            padding: 35px 0 0;
+            white-space: nowrap;
+            position: relative;
+            
+            small {
+                color: rgba(87, 87, 87, 1);
+                @include font(.658rem, 400 $main);
+            }
+            
+            input {
+                border: 1px solid rgba(193, 194, 195, 1);
+                width: 38%; 
+                height: 48px;
+                display: inline-block;
+                padding: 0 1em 0;
+                margin-right: 1%;
+                
+                @include placeholder {
+                    color: rgba(115, 115, 115, 1);
+                    @include font(1rem, 400, $main, 1.679);
+                }
+            }
+            
+            input::-webkit-input-placeholder { font-size: 1rem !important; color: #454545 !important; }
+            input:-moz-placeholder { font-size: 1rem !important; color: #454545 !important; }
+            input::-moz-placeholder { font-size: 1rem !important; color: #454545 !important; }
+            input:-ms-input-placeholder { font-size: 1rem !important; color: #454545 !important; }
+            
+            input[type="text"] {
+                margin: 0 1% 0 0;    
+            }
+            
+            button {
+                background: $color-base;
+                border: 0;
+                color: #fff;
+                @include font(.7rem, 700, $main, 2);
+                letter-spacing: .5px;
+                
+                width: 20%;
+                height: 48px;
+                padding: 0 2em 0;
+            }
+        }
+    }
+
+ }
