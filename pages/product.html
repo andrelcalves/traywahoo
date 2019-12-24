@@ -36,13 +36,13 @@
                           {% if product.new %}
                             <div class="flag-new">
                               <i class="fa fa-bolt" aria-hidden="true"></i>
-                              <span>Lançamento</span>
+                              <span>Lanï¿½amento</span>
                             </div>
                           {% endif %}
                           {% if product.free_shipping %}
                             <div class="flag-shipping">
                               <i class="fa fa-truck" aria-hidden="true"></i>
-                              <span>Frete Grátis</span>
+                              <span>Frete Grï¿½tis</span>
                             </div>
                           {% endif %}
                       </div>
@@ -119,9 +119,15 @@
                 <div class="col-sm-12 product-details-info">
                 <div style="order-bottom: 2px solid #222222;border-top: 2px solid #222222;display: inline-block;margin: 2px 2px;line-height: 20px;">
                     <p style="display: inline-block;margin: 0;padding: 8px 0;">
+                        <!--  
                         <span style="color: #000;font-family: montserrat,sans-serif;font-size: 25px;clear: both;margin: 10px 0;">
-                          R${{ product.price }}
+                            R${{ product.price }}   
                         </span>
+                          -->
+                        <div class="produt-preco">
+                          {{ productHelper.pricing() }}
+                        </div>
+                         
                         <meta itemprop="priceCurrency" content="BRL">
                     </p>
                      <p style="display: inline-block;margin: 0;padding: 8px 0;"></p>
@@ -145,7 +151,7 @@
                 {% if product.availability|length > 0 %}
                 <div class="details-availability">
                   {% if product.availability %}
-                  <span style="color: white;font-weight: 700;line-height: 18px;display: inline-block;padding: 3px 8px 4px;background: #A5A5A5;border-radius: 5px;font-family: montserrat,sans-serif;font-size: 14px;clear: both;margin: 2px 0;">Envio {{ product.availability }} {{ Translation('ag_prazo_envio') }} após confirmação do pagamento</span>
+                  <span style="color: white;font-weight: 700;line-height: 18px;display: inline-block;padding: 3px 8px 4px;background: #A5A5A5;border-radius: 5px;font-family: montserrat,sans-serif;font-size: 14px;clear: both;margin: 2px 0;">Envio {{ product.availability }} {{ Translation('ag_prazo_envio') }} apï¿½s confirmaï¿½ï¿½o do pagamento</span>
                   {% endif %}
                 </div>
                 {% endif %}
@@ -208,7 +214,7 @@
             <div class="produto-orcamento">
               <span>
                 <a class="color-detail-bg bt-orcamento" href="#" data-url="{{ links.product_question }}&IdProd={{ product.id }}" data-title="{{ product.name }}" data-toggle="modal" data-target="#modal-form" data-modal-width="600px">
-                  SOLICITAR ORÇAMENTO
+                  SOLICITAR ORï¿½AMENTO
                 </a>
               </span>
             </div>
